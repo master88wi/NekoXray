@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>700</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -33,7 +33,7 @@
    <item row="2" column="3">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -589,6 +589,16 @@
                 <widget class="QLineEdit" name="mux_concurrency"/>
                </item>
                <item>
+                <widget class="QCheckBox" name="mux_padding">
+                 <property name="toolTip">
+                  <string>Enabling it may potentially reduce the TLS in TLS overhead.</string>
+                 </property>
+                 <property name="text">
+                  <string>padding</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QCheckBox" name="mux_default_on">
                  <property name="text">
                   <string>Default On</string>
@@ -679,8 +689,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>198</width>
-            <height>58</height>
+            <width>614</width>
+            <height>338</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">

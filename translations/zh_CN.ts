@@ -229,7 +229,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in VPN mode, normal mod
     </message>
     <message>
         <source>Multiplex (mux)</source>
-        <translation>多路复用 Mux</translation>
+        <translation>多路复用 (Mux)</translation>
+    </message>
+    <message>
+        <source>padding</source>
+        <translation>填充</translation>
     </message>
     <message>
         <source>Latency Test URL</source>

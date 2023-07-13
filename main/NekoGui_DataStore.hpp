@@ -100,6 +100,7 @@ namespace NekoGui {
         int current_group = 0; // group id
         QString mux_protocol = "";
         int mux_concurrency = 8;
+        bool mux_padding = false;
         bool mux_default_on = false;
         QString theme = "0";
         QString v2ray_asset_dir = "";
