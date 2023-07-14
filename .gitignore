@@ -75,6 +75,7 @@ Thumbs.db
 CMakeLists.txt.user*
 /cmake-build-*
 /build-*
+neko*_core
 .vscode
 .idea
 
