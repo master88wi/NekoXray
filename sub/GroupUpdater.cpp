@@ -295,9 +295,17 @@ namespace NekoGui_sub {
                                 bean->stream->host = Node2QString(header.second);
                             }
                         }
-                        bean->stream->path = Node2QString(ws["path"]);
+                        if (ws["path"].IsNull()) {
+                            bean->stream->path = "/";
+                        } else {
+                            bean->stream->path = Node2QString(ws["path"]);
+                        }
                         bean->stream->ws_early_data_length = Node2Int(ws["max-early-data"]);
                         bean->stream->ws_early_data_name = Node2QString(ws["early-data-header-name"]);
+                        // for Xray
+                        if (Node2QString(ws["early-data-header-name"]) == "Sec-WebSocket-Protocol") {
+                            bean->stream->path += "?ed=" +  Node2QString(ws["max-early-data"]);
+                        }
                     }
 
                     auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
@@ -330,9 +338,18 @@ namespace NekoGui_sub {
                                 bean->stream->host = Node2QString(header.second);
                             }
                         }
-                        bean->stream->path = Node2QString(ws["path"]);
+                        if (ws["path"].IsNull()) {
+                            bean->stream->path = "/";
+                        } else {
+                            bean->stream->path = Node2QString(ws["path"]);
+                        }
                         bean->stream->ws_early_data_length = Node2Int(ws["max-early-data"]);
                         bean->stream->ws_early_data_name = Node2QString(ws["early-data-header-name"]);
+                        // for Xray
+                        QString wsEarlyDataName = Node2QString(ws["early-data-header-name"]);
+                        if (Node2QString(ws["early-data-header-name"]) == "Sec-WebSocket-Protocol") {
+                            bean->stream->path += "?ed=" +  Node2QString(ws["max-early-data"]);
+                        }
                     }
 
                     auto grpc = NodeChild(proxy, {"grpc-opts", "grpc-opt"});
