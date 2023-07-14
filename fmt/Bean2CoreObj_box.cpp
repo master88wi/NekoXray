@@ -127,6 +127,8 @@ namespace NekoGui_fmt {
             {"server_port", serverPort},
             {"uuid", uuid.trimmed()},
             {"alter_id", aid},
+            {"global_padding", true},
+            {"authenticated_length", true},
             {"security", security},
         };
 
