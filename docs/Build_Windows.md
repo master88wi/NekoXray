@@ -3,7 +3,7 @@
 ### git clone 源码
 
 ```
-git clone https://github.com/MatsuriDayo/nekoray.git --recursive
+git clone https://github.com/HystericalDragon/nekoXray.git --recursive
 ```
 
 ### 安装 Visual Studio

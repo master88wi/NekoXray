@@ -1,10 +1,10 @@
-# NekoRay / NekoBox For PC
+# NekoXRay / NekoBox For PC
 
-Qt based cross-platform GUI proxy configuration manager (backend: v2ray / sing-box)
+Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)
 
 Support Windows / Linux out of the box now.
 
-基于 Qt 的跨平台代理配置管理器 (后端 v2ray / sing-box)
+基于 Qt 的跨平台代理配置管理器 (后端 Xray / sing-box)
 
 目前支持 Windows / Linux 开箱即用
 
@@ -18,9 +18,9 @@ Support Windows / Linux out of the box now.
 
 便携格式，无安装器。转到 Releases 下载预编译的二进制文件，解压后即可使用。
 
-[![GitHub All Releases](https://img.shields.io/github/downloads/Matsuridayo/nekoray/total?label=downloads-total&logo=github&style=flat-square)](https://github.com/Matsuridayo/nekoray/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/HystericalDragon/nekoXray/total?label=downloads-total&logo=github&style=flat-square)](https://github.com/HystericalDragon/nekoXray/releases)
 
-[下载 / Download](https://github.com/Matsuridayo/nekoray/releases)
+[下载 / Download](https://github.com/HystericalDragon/nekoXray/releases)
 
 [安装包的说明，如果你不知道要下载哪一个](https://github.com/MatsuriDayo/nekoray/wiki/Installation-package-description)
 
@@ -35,7 +35,7 @@ https://t.me/Matsuridayo
 
 ## 项目主页 & 文档 / Homepage & Documents
 
-https://matsuridayo.github.io
+https://HystericalDragon.github.io/matsuridayo.github.io
 
 ## 代理 / Proxy
 
@@ -45,6 +45,7 @@ https://matsuridayo.github.io
 * VMess
 * VLESS
 * Trojan
+* WireGuard
 * NaïveProxy ( Custom Core )
 * Hysteria ( Custom Core or sing-box )
 * Custom Outbound
@@ -79,21 +80,7 @@ https://matsuridayo.github.io
 
 ## 编译教程 / Compile Tutorial
 
-请看 [技术文档 / Technical documentation](https://github.com/MatsuriDayo/nekoray/tree/main/docs)
-
-## 捐助 / Donate
-
-Donations are welcome to support project development.
-
-欢迎捐赠以支持项目开发。
-
-USDT TRC20
-
-`TRhnA7SXE5Sap5gSG3ijxRmdYFiD4KRhPs`
-
-XMR
-
-`49bwESYQjoRL3xmvTcjZKHEKaiGywjLYVQJMUv79bXonGiyDCs8AzE3KiGW2ytTybBCpWJUvov8SjZZEGg66a4e59GXa6k5`
+请看 [技术文档 / Technical documentation](docs/readme.md)
 
 ## Credits
 
@@ -116,3 +103,4 @@ Gui:
 - [zxing-cpp](https://github.com/nu-book/zxing-cpp)
 - [QHotkey](https://github.com/Skycoder42/QHotkey)
 - [AppImageKit](https://github.com/AppImage/AppImageKit)
+- [NekoRay](https://github.com/MatsuriDayo/nekoray)

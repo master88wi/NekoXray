@@ -10,7 +10,7 @@ rm nekoray.AppDir/launcher
 
 cat >nekoray.AppDir/nekoray.desktop <<-EOF
 [Desktop Entry]
-Name=nekoray
+Name=nekoXray
 Exec=echo "NekoRay started"
 Icon=nekoray
 Type=Application

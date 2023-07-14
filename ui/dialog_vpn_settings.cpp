@@ -75,7 +75,7 @@ void DialogVPNSettings::on_troubleshooting_clicked() {
     auto r = QMessageBox::information(this, tr("Troubleshooting"),
                                       tr("If you have trouble starting VPN, you can force reset nekobox_core process here.\n\n"
                                          "If still not working, see documentation for more information.\n"
-                                         "https://matsuridayo.github.io/n-configuration/#vpn-tun"),
+                                         "https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tun"),
                                       tr("Reset"), tr("Cancel"), "",
                                       1, 1);
     if (r == 0) {

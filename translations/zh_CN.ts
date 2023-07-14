@@ -736,11 +736,11 @@ These settings can be changed later.</source>
         <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
 
 If still not working, see documentation for more information.
-https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
+https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation>如果您在启动 VPN 时遇到问题，您可以在此处强制重置 nekobox_core 进程。
 
 如果仍然无法正常工作，请参阅文档以获取更多信息。
-https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
+https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Reset</source>
