@@ -367,6 +367,14 @@ namespace NekoGui_sub {
                             break;
                         }
                     }
+                } else if (type_clash == "wireguard") {
+                    auto bean = ent->WireGuardBean();
+                    bean->local_address = Node2QString(proxy["ip"], ",") + "," + Node2QString(proxy["ipv6"]);
+                    bean->private_key = Node2QString(proxy["private-key"]);
+                    bean->peer_public_key = Node2QString(proxy["public-key"]);
+                    bean->pre_shared_key = Node2QString(proxy["pre-shared-key"]);
+                    bean->reserved = Node2QString(proxy["reserved"]);
+                    bean->wireguard_mtu = Node2Int(proxy["mtu"]);
                 } else if (type_clash == "hysteria") {
                     auto bean = ent->HysteriaBean();
 

@@ -13,6 +13,8 @@ namespace NekoGui_fmt {
 
     class TrojanVLESSBean;
 
+    class WireGuardBean;
+
     class NaiveBean;
 
     class HysteriaBean;
@@ -59,6 +61,10 @@ namespace NekoGui {
 
         [[nodiscard]] NekoGui_fmt::TrojanVLESSBean *TrojanVLESSBean() const {
             return (NekoGui_fmt::TrojanVLESSBean *) bean.get();
+        };
+
+        [[nodiscard]] NekoGui_fmt::WireGuardBean *WireGuardBean() const {
+            return (NekoGui_fmt::WireGuardBean *) bean.get();
         };
 
         [[nodiscard]] NekoGui_fmt::NaiveBean *NaiveBean() const {

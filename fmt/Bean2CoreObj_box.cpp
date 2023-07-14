@@ -157,6 +157,25 @@ namespace NekoGui_fmt {
         return result;
     }
 
+    CoreObjOutboundBuildResult WireGuardBean::BuildCoreObjSingBox() {
+        CoreObjOutboundBuildResult result;
+
+        QJsonObject outbound{
+            {"type", "wireguard"},
+            {"server", serverAddress},
+            {"server_port", serverPort},
+            {"local_address", local_address},
+            {"private_key", private_key},
+            {"peer_public_key", peer_public_key},
+            {"pre_shared_key", pre_shared_key},
+            {"reserved", reserved},
+            {"mtu", wireguard_mtu},
+        };
+
+        result.outbound = outbound;
+        return result;
+    }
+
     CoreObjOutboundBuildResult HysteriaBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 

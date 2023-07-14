@@ -208,6 +208,9 @@ set(PROJECT_SOURCES
         ui/edit/edit_trojan_vless.h
         ui/edit/edit_trojan_vless.cpp
         ui/edit/edit_trojan_vless.ui
+        ui/edit/edit_wireguard.h
+        ui/edit/edit_wireguard.cpp
+        ui/edit/edit_wireguard.ui
 
         ui/edit/edit_naive.h
         ui/edit/edit_naive.cpp

@@ -83,6 +83,8 @@ namespace NekoGui {
             bean = new NekoGui_fmt::TrojanVLESSBean(NekoGui_fmt::TrojanVLESSBean::proxy_Trojan);
         } else if (type == "vless") {
             bean = new NekoGui_fmt::TrojanVLESSBean(NekoGui_fmt::TrojanVLESSBean::proxy_VLESS);
+        } else if (type == "wireguard") {
+            bean = new NekoGui_fmt::WireGuardBean();
         } else if (type == "naive") {
             bean = new NekoGui_fmt::NaiveBean();
         } else if (type == "hysteria") {
