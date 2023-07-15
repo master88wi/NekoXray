@@ -19,7 +19,7 @@ Depends: libxcb-xinerama0, libqt5core5a, libqt5gui5, libqt5network5, libqt5widge
 Description: Qt based cross-platform GUI proxy configuration manager (backend: v2ray / sing-box)
 EOF
 
-# Start VPN mode without password
+# Start TUN Mode without password
 cat >nekoray/opt/nekoXray/pkexec <<-EOF
 #!/bin/sh
 

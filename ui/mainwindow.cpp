@@ -422,11 +422,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         DS_cores);
 
     // Remember system proxy
-    if (NekoGui::dataStore->remember_enable) {
+    if (NekoGui::dataStore->remember_enable || NekoGui::dataStore->flag_restart_tun_on) {
         if (NekoGui::dataStore->remember_spmode.contains("system_proxy")) {
             neko_set_spmode_system_proxy(true, false);
         }
-        if (NekoGui::dataStore->remember_spmode.contains("vpn")) {
+        if (NekoGui::dataStore->remember_spmode.contains("vpn") || NekoGui::dataStore->flag_restart_tun_on) {
             neko_set_spmode_vpn(true, false);
         }
     }
@@ -534,7 +534,7 @@ void MainWindow::dialog_message_impl(const QString &sender, const QString &info)
         }
         refresh_proxy_list();
         if (info.contains("VPNChanged") && NekoGui::dataStore->spmode_vpn) {
-            MessageBoxWarning(tr("VPN settings changed"), tr("Restart VPN to take effect."));
+            MessageBoxWarning(tr("Tun Settings changed"), tr("Restart Tun to take effect."));
         }
         if (suggestRestartProxy && NekoGui::dataStore->started_id >= 0 &&
             QMessageBox::question(GetMessageBoxParent(), tr("Confirmation"), tr("Settings changed, restart proxy?")) == QMessageBox::StandardButton::Yes) {
@@ -688,12 +688,15 @@ void MainWindow::on_menu_exit_triggered() {
         if (arguments.length() > 0) {
             arguments.removeFirst();
             arguments.removeAll("-tray");
+            arguments.removeAll("-flag_restart_tun_on");
         }
         auto isLauncher = qEnvironmentVariable("NKR_FROM_LAUNCHER") == "1";
         if (isLauncher) arguments.prepend("--");
         auto program = isLauncher ? "./launcher" : QApplication::applicationFilePath();
 
-        if (exit_reason == 3) { // restart as admin
+        if (exit_reason == 3) {
+            // Tun restart as admin
+            arguments << "-flag_restart_tun_on";
 #ifdef Q_OS_WIN
             WinCommander::runProcessElevated(program, arguments, "", WinCommander::SW_NORMAL, false);
 #else
@@ -768,7 +771,7 @@ void MainWindow::neko_set_spmode_vpn(bool enable, bool save) {
                 }
             } else {
                 if (NekoGui::dataStore->need_keep_vpn_off) {
-                    MessageBoxWarning(software_name, tr("Current server is incompatible with VPN. Please stop the server first, enable VPN mode, and then restart."));
+                    MessageBoxWarning(software_name, tr("Current server is incompatible with Tun. Please stop the server first, enable Tun Mode, and then restart."));
                     neko_set_spmode_FAILED
                 }
                 if (!StartVPNProcess()) {
@@ -1850,7 +1853,7 @@ bool MainWindow::StopVPNProcess(bool unconditional) {
         ok = p.exitCode() == 0;
 #endif
         if (!unconditional) {
-            ok ? vpn_pid = 0 : MessageBoxWarning(tr("Error"), tr("Failed to stop VPN process"));
+            ok ? vpn_pid = 0 : MessageBoxWarning(tr("Error"), tr("Failed to stop Tun process"));
         }
         return ok;
     }
