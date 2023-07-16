@@ -191,14 +191,14 @@ namespace NekoGui_fmt {
         return result;
     }
 
-CoreObjOutboundBuildResult WireGuardBean::BuildCoreObjV2Ray() {
+    CoreObjOutboundBuildResult WireGuardBean::BuildCoreObjV2Ray() {
         CoreObjOutboundBuildResult result;
         QString endpoint = serverAddress + ":" + QString::number(serverPort);
 
         QJsonObject outbound{{"protocol", "wireguard"}};
 
         QJsonObject settings{
-            {"address", local_address},
+            {"address", QList2QJsonArray(local_address.split(","))},
             {"secretKey", private_key},
             {"peers", QJsonArray{
                           QJsonObject{
@@ -206,7 +206,9 @@ CoreObjOutboundBuildResult WireGuardBean::BuildCoreObjV2Ray() {
                               {"publicKey", peer_public_key},
                               {"preSharedKey", pre_shared_key},
                           }}},
-            {"mtu", wireguard_mtu}};
+            {"mtu", wireguard_mtu},
+            {"reserved", reserved},
+        };
 
         outbound["settings"] = settings;
 

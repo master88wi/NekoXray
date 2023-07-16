@@ -166,7 +166,7 @@ namespace NekoGui_fmt {
             {"type", "wireguard"},
             {"server", serverAddress},
             {"server_port", serverPort},
-            {"local_address", local_address},
+            {"local_address", QList2QJsonArray(local_address.split(","))},
             {"private_key", private_key},
             {"peer_public_key", peer_public_key},
             {"pre_shared_key", pre_shared_key},

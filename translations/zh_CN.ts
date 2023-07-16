@@ -243,6 +243,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Download Test URL</source>
         <translation>下载测试 URL</translation>
     </message>
+    <message>
+        <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
+        <translation>开启后可能能缓解 TLS in TLS 特征。</translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -971,6 +975,33 @@ This needs to be run NekoBox with administrator privileges.</source>
     <message>
         <source>Generate UUID</source>
         <translation>生成 UUID</translation>
+    </message>
+</context>
+<context>
+    <name>EditWireGuard</name>
+    <message>
+        <source>peer public key</source>
+        <translation>对端公钥</translation>
+    </message>
+    <message>
+        <source>mtu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reserved</source>
+        <translation>保留字段（reserved）</translation>
+    </message>
+    <message>
+        <source>pre shared key</source>
+        <translation>预共享密钥</translation>
+    </message>
+    <message>
+        <source>private key</source>
+        <translation>私钥</translation>
+    </message>
+    <message>
+        <source>local address</source>
+        <translation>本地地址</translation>
     </message>
 </context>
 <context>

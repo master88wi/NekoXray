@@ -243,6 +243,14 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Download Test URL</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>padding</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -735,13 +743,6 @@ These settings can be changed later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
-
-If still not working, see documentation for more information.
-https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation type="unfinished">بازنشانی</translation>
     </message>
@@ -756,6 +757,13 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
     <message>
         <source>Add a tun inbound to the profile startup, instead of using two processes.
 This needs to be run NekoBox with administrator privileges.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
+
+If still not working, see documentation for more information.
+https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -968,6 +976,33 @@ This needs to be run NekoBox with administrator privileges.</source>
     </message>
     <message>
         <source>Generate UUID</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EditWireGuard</name>
+    <message>
+        <source>peer public key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mtu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reserved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pre shared key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>private key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>local address</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
