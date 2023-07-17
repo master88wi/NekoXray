@@ -171,7 +171,7 @@ namespace NekoGui_fmt {
                                   {"users", QJsonArray{
                                                 QJsonObject{
                                                     {"id", password.trimmed()},
-                                                    {"encryption", "none"},
+                                                    {"encryption", encryption},
                                                     {"flow", flow},
                                                 }}},
                               }}}};

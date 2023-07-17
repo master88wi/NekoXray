@@ -21,15 +21,19 @@ void EditTrojanVLESS::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
     if (bean->proxy_type != NekoGui_fmt::TrojanVLESSBean::proxy_VLESS) {
         ui->flow->hide();
         ui->flow_l->hide();
+        ui->encryption->hide();
+        ui->encryption_l->hide();
     }
     ui->password->setText(bean->password);
     ui->flow->addItems(IS_NEKO_BOX ? Preset::SingBox::Flows : Preset::Xray::Flows);
     ui->flow->setCurrentText(bean->flow);
+    ui->encryption->setText(bean->encryption);
 }
 
 bool EditTrojanVLESS::onEnd() {
     auto bean = this->ent->TrojanVLESSBean();
     bean->password = ui->password->text();
     bean->flow = ui->flow->currentText();
+    bean->encryption = ui->encryption->text();
     return true;
 }

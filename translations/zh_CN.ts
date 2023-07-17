@@ -957,6 +957,14 @@ This needs to be run NekoBox with administrator privileges.</source>
         <source>Password</source>
         <translation>密码</translation>
     </message>
+    <message>
+        <source>Can be set in the feature.</source>
+        <translation>将在未来开启。</translation>
+    </message>
+    <message>
+        <source>encryption</source>
+        <translation>加密</translation>
+    </message>
 </context>
 <context>
     <name>EditVMess</name>

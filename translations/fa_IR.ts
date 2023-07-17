@@ -959,6 +959,14 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
         <source>Password</source>
         <translation>کلمه عبور</translation>
     </message>
+    <message>
+        <source>Can be set in the feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EditVMess</name>

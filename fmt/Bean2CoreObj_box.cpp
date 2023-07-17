@@ -150,6 +150,7 @@ namespace NekoGui_fmt {
         if (proxy_type == proxy_VLESS) {
             outbound["uuid"] = password.trimmed();
             outbound["flow"] = flow;
+            // outbound["encryption"] = encryption; // Will be enabled in the feature
         } else {
             outbound["password"] = password;
         }
