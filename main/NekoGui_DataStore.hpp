@@ -14,7 +14,7 @@ namespace NekoGui {
         QString custom = "{\"rules\": []}";
 
         // DNS
-        QString remote_dns = "https://8.8.8.8/dns-query";
+        QString remote_dns = "https://dns.google/dns-query";
         QString remote_dns_strategy = "";
         QString direct_dns = "localhost";
         QString direct_dns_strategy = "";
