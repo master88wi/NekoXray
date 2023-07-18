@@ -1001,7 +1001,7 @@ namespace NekoGui {
             QJsonObject clash_api = {
                 {"external_controller", "127.0.0.1:" + Int2String(dataStore->core_box_clash_api)},
                 {"secret", dataStore->core_box_clash_api_secret},
-                {"external_ui", "dashboard"},
+                {"external_ui", dataStore->core_box_clash_api_ui},
             };
             experimentalObj["clash_api"] = clash_api;
         }
