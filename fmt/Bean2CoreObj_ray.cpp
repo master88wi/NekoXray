@@ -197,6 +197,21 @@ namespace NekoGui_fmt {
 
         QJsonObject outbound{{"protocol", "wireguard"}};
 
+        // reserved: string to int
+        QJsonArray reservedJsonArray;
+        if (!reserved.isEmpty()) {
+            QStringList reservedList = reserved.split(",");
+            QList<int> reservedIntList;
+
+            foreach (const QString& str, reservedList) {
+                int number = str.toInt();
+                reservedIntList.append(number);
+            }
+            reservedJsonArray = QList2QJsonArray(reservedIntList);
+        } else {
+            reservedJsonArray = QJsonArray();
+        }
+
         QJsonObject settings{
             {"address", QList2QJsonArray(local_address.split(","))},
             {"secretKey", private_key},
@@ -207,7 +222,7 @@ namespace NekoGui_fmt {
                               {"preSharedKey", pre_shared_key},
                           }}},
             {"mtu", wireguard_mtu},
-            {"reserved", reserved},
+            {"reserved", reservedJsonArray},
         };
 
         outbound["settings"] = settings;

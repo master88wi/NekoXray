@@ -2,7 +2,7 @@
 #include "fmt/includes.h"
 
 namespace NekoGui_fmt {
-    void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
+    void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject* outbound) {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
 
         if (network != "tcp") {
@@ -163,6 +163,21 @@ namespace NekoGui_fmt {
     CoreObjOutboundBuildResult WireGuardBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 
+        // reserved: string to int
+        QJsonArray reservedJsonArray;
+        if (!reserved.isEmpty()) {
+            QStringList reservedList = reserved.split(",");
+            QList<int> reservedIntList;
+
+            foreach (const QString& str, reservedList) {
+                int number = str.toInt();
+                reservedIntList.append(number);
+            }
+            reservedJsonArray = QList2QJsonArray(reservedIntList);
+        } else {
+            reservedJsonArray = QJsonArray();
+        }
+
         QJsonObject outbound{
             {"type", "wireguard"},
             {"server", serverAddress},
@@ -171,7 +186,7 @@ namespace NekoGui_fmt {
             {"private_key", private_key},
             {"peer_public_key", peer_public_key},
             {"pre_shared_key", pre_shared_key},
-            {"reserved", reserved},
+            {"reserved", reservedJsonArray},
             {"mtu", wireguard_mtu},
         };
 
