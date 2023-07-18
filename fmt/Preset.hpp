@@ -7,7 +7,7 @@ namespace Preset {
                                                  "2022-blake3-aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-chacha20-poly1305",
                                                  "aes-128-ctr", "aes-192-ctr", "aes-256-ctr", "aes-128-cfb", "aes-192-cfb", "aes-256-cfb",
                                                  "rc4", "rc4-md5", "bf-cfb", "chacha20", "chacha20-ietf", "xchacha20", "none"};
-        inline QStringList Flows = {"xtls-rprx-vision", "xtls-rprx-vision-udp443"};
+        inline QStringList Flows = {"xtls-rprx-vision"};
     } // namespace Xray
 
     namespace SingBox {

@@ -172,7 +172,7 @@ namespace NekoGui_fmt {
                                                 QJsonObject{
                                                     {"id", password.trimmed()},
                                                     {"encryption", encryption},
-                                                    {"flow", flow},
+                                                    {"flow", flow + "-udp443"},
                                                 }}},
                               }}}};
         } else {
