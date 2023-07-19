@@ -206,14 +206,22 @@ namespace NekoGui_fmt {
         // reserved: string to int
         QJsonArray reservedJsonArray;
         if (!reserved.isEmpty()) {
-            QStringList reservedList = reserved.split(",");
-            QList<int> reservedIntList;
+            if (reserved.indexOf(',') != std::string::npos) {
+                QStringList reservedList = reserved.split(",");
+                QList<int> reservedIntList;
 
-            foreach (const QString& str, reservedList) {
-                int number = str.toInt();
-                reservedIntList.append(number);
+                foreach (const QString& str, reservedList) {
+                    int number = str.toInt();
+                    reservedIntList.append(number);
+                }
+                reservedJsonArray = QList2QJsonArray(reservedIntList);
+            } else {
+                QByteArray decoded = QByteArray::fromBase64(reserved.toUtf8());
+                for (int i = 0; i < decoded.size(); i++) {
+                    int value = static_cast<unsigned char>(decoded[i]);
+                    reservedJsonArray.append(value);
+                }
             }
-            reservedJsonArray = QList2QJsonArray(reservedIntList);
         } else {
             reservedJsonArray = QJsonArray();
         }

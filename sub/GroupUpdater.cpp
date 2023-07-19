@@ -305,7 +305,7 @@ namespace NekoGui_sub {
                         bean->stream->ws_early_data_name = Node2QString(ws["early-data-header-name"]);
                         // for Xray
                         if (Node2QString(ws["early-data-header-name"]) == "Sec-WebSocket-Protocol") {
-                            bean->stream->path += "?ed=" +  Node2QString(ws["max-early-data"]);
+                            bean->stream->path += "?ed=" + Node2QString(ws["max-early-data"]);
                         }
                     }
 
@@ -350,7 +350,7 @@ namespace NekoGui_sub {
                         // for Xray
                         QString wsEarlyDataName = Node2QString(ws["early-data-header-name"]);
                         if (Node2QString(ws["early-data-header-name"]) == "Sec-WebSocket-Protocol") {
-                            bean->stream->path += "?ed=" +  Node2QString(ws["max-early-data"]);
+                            bean->stream->path += "?ed=" + Node2QString(ws["max-early-data"]);
                         }
                     }
 
@@ -392,8 +392,18 @@ namespace NekoGui_sub {
                     bean->private_key = Node2QString(proxy["private-key"]);
                     bean->peer_public_key = Node2QString(proxy["public-key"]);
                     bean->pre_shared_key = Node2QString(proxy["pre-shared-key"]);
-                    bean->reserved = Node2QString(proxy["reserved"]);
-                    bean->wireguard_mtu = Node2Int(proxy["mtu"]);
+                    //
+                    if (proxy["reserved"].Type() == YAML::NodeType::Sequence) {
+                        bean->reserved = Node2QStringList(proxy["reserved"]).join(",");
+                    } else {
+                        bean->reserved = Node2QString(proxy["reserved"]);
+                    }
+                    // set defult mtu
+                    if (Node2Int(proxy["mtu"]) == 0) {
+                        bean->wireguard_mtu = 1408;
+                    } else {
+                        bean->wireguard_mtu = Node2Int(proxy["mtu"]);
+                    }
                 } else if (type_clash == "hysteria") {
                     auto bean = ent->HysteriaBean();
 
