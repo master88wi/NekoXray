@@ -167,6 +167,11 @@ namespace NekoGui_fmt {
             {"protocol", proxy_type == proxy_VLESS ? "vless" : "trojan"},
         };
 
+        if (!flow.isEmpty() && flow.right(7) == "-udp443") {
+            // 检查末尾是否包含"-udp443"，如果是，则去除
+            flow.chop(7);
+        }
+
         QJsonObject settings;
         if (proxy_type == proxy_VLESS) {
             settings = QJsonObject{
