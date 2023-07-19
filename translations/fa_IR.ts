@@ -934,8 +934,12 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
         <translation>پلاگین</translation>
     </message>
     <message>
-        <source>Server support is required</source>
+        <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished">خاموش</translation>
     </message>
 </context>
 <context>
