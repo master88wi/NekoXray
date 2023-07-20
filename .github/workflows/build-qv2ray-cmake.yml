@@ -203,6 +203,18 @@ jobs:
           bash ../libs/package_debian.sh ${{ github.event.inputs.tag }}
           mv nekoray.deb $version_standalone-debian-x64.deb
           sudo rm -rf nekoray
+      - name: Pack Arch
+        if: github.event.inputs.publish != 'y'
+        run: |
+          source libs/deploy_common.sh
+          find . -name artifacts.tgz | xargs -n1 tar xvzf
+          cd deployment
+          mkdir -p nekoray
+          cp $version_standalone-linux64.zip nekoray/nekoray.zip
+          ####
+          bash ../libs/package_arch.sh
+          sudo mv nekoray/nekoray.pkg.tar.zst ./$version_standalone-linux64.pkg.tar.zst
+          sudo rm -rf nekoray
       - name: Pack AppImage
         run: |
           source libs/deploy_common.sh

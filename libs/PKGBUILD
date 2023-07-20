@@ -1,0 +1,52 @@
+pkgname='nekoXray-bin'
+pkgver=3.12
+pkgrel=1
+pkgdesc='Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)'
+arch=('x86_64')
+url='https://hystericaldragon.github.io/matsuridayo.github.io'
+license=('GPL')
+depends=('qt5-base' 'qt5-svg' 'qt5-tools' 'qt5-x11extras' 'protobuf' 'yaml-cpp' 'zxing-cpp' 'unzip')
+
+optdepends=(
+    # AUR
+    'xray-domain-list-community: geosite data for NekoXRay'
+    'xray-geoip: geoip data for NekoXRay'
+    'sing-geoip: geoip data for NekoBox'
+    'sing-geosite: geosite data for NekoBox'
+)
+
+source=(
+    'nekoray.zip'
+    'nekoXray.desktop'
+    'pkexec'
+)
+sha512sums=('SKIP' 'SKIP' 'SKIP')
+
+# pkgver() {
+#     cd "${srcdir}/nekoray"
+#     git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+# }
+
+build() {
+    unzip -o nekoray.zip
+    # remove pre-built Qt depends
+    rm -rf ${srcdir}/nekoray/usr
+    rm ${srcdir}/nekoray/launcher
+}
+
+package() {
+    # .desktop file
+    install -Dm644 "${srcdir}/nekoXray.desktop" "${pkgdir}/usr/share/applications/nekoXray.desktop"
+    
+    # app
+    mkdir -p ${pkgdir}/opt
+    cp -r "${srcdir}/nekoray/" "${pkgdir}/opt/nekoXray/"
+    install -m755 "${srcdir}/pkexec" "${pkgdir}/opt/nekoXray/pkexec"
+}
+
+post_install_script() {
+    # start TUN mode without password
+    chmod +x /opt/nekoXray/pkexec
+    chmod 0755 /opt/nekoXray/pkexec
+    setcap cap_net_admin=ep /opt/nekoXray/nekobox_core
+}
