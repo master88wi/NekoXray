@@ -37,7 +37,7 @@ build() {
 package() {
     # .desktop file
     install -Dm644 "${srcdir}/nekoXray.desktop" "${pkgdir}/usr/share/applications/nekoXray.desktop"
-    
+
     # app
     mkdir -p ${pkgdir}/opt
     cp -r "${srcdir}/nekoray/" "${pkgdir}/opt/nekoXray/"
@@ -49,4 +49,5 @@ post_install_script() {
     chmod +x /opt/nekoXray/pkexec
     chmod 0755 /opt/nekoXray/pkexec
     setcap cap_net_admin=ep /opt/nekoXray/nekobox_core
+    chmod -R a+rwX /opt/nekoXray/
 }
