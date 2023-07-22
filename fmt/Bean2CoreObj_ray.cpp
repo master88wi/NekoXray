@@ -167,13 +167,20 @@ namespace NekoGui_fmt {
             {"protocol", proxy_type == proxy_VLESS ? "vless" : "trojan"},
         };
 
-        if (!flow.isEmpty() && flow.right(7) == "-udp443") {
-            // 检查末尾是否包含"-udp443"，如果是，则去除
-            flow.chop(7);
-        }
-
         QJsonObject settings;
         if (proxy_type == proxy_VLESS) {
+
+            if (flow.right(7) == "-udp443") {
+                // 检查末尾是否包含"-udp443"，如果是，则保留
+                flow = flow;
+            } else if (flow == "none") {
+                // 不使用 flow
+                flow = "";
+            } else {
+                // 其余情况加上 -udp443 以放行 QUIC 流量
+                flow += "-udp443";
+            }
+            
             settings = QJsonObject{
                 {"vnext", QJsonArray{
                               QJsonObject{
@@ -183,7 +190,7 @@ namespace NekoGui_fmt {
                                                 QJsonObject{
                                                     {"id", password.trimmed()},
                                                     {"encryption", encryption},
-                                                    {"flow", flow + "-udp443"},
+                                                    {"flow", flow},
                                                 }}},
                               }}}};
         } else {
