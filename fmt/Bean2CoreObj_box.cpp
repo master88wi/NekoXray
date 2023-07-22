@@ -160,7 +160,7 @@ namespace NekoGui_fmt {
             QString configFlow;
             if (flow.right(7) == "-udp443") {
                 // 检查末尾是否包含"-udp443"，如果是，则删去
-                configFlow = flow.left(flow.length() - 7);;
+                configFlow = flow.left(flow.length() - 7);
             } else if (flow == "none" || flow.isEmpty()) {
                 // 不使用 flow
                 configFlow = "";
