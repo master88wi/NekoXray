@@ -239,6 +239,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>If you Tun Mode is not working, try to change this option.</source>
         <translation>Если TUN-режим не работает как надо, попробуйте изменить эту опцию.</translation>
     </message>
+    <message>
+        <source>Timeout (s)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -1314,7 +1318,7 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>По умолчанию</translation>
+        <translation type="vanished">По умолчанию</translation>
     </message>
     <message>
         <source>Load routing and apply: %1</source>
@@ -1645,6 +1649,10 @@ Release note:
     <message>
         <source>Used: %1 Remain: %2 Expire: %3</source>
         <translation>Использовано: %1, осталось: %2, истекло: %3</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">По умолчанию</translation>
     </message>
 </context>
 <context>

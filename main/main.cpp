@@ -92,6 +92,7 @@ int main(int argc, char* argv[]) {
     if (NekoGui::dataStore->argv.contains("-debug")) NekoGui::dataStore->flag_debug = true;
     if (NekoGui::dataStore->argv.contains("-flag_linux_run_core_as_admin")) NekoGui::dataStore->flag_linux_run_core_as_admin = true;
     if (NekoGui::dataStore->argv.contains("-flag_restart_tun_on")) NekoGui::dataStore->flag_restart_tun_on = true;
+    if (NekoGui::dataStore->argv.contains("-flag_reorder")) NekoGui::dataStore->flag_reorder = true;
 #ifdef NKR_CPP_USE_APPDATA
     NekoGui::dataStore->flag_use_appdata = true; // Example: Package & MacOS
 #endif
@@ -219,6 +220,7 @@ int main(int argc, char* argv[]) {
     if (NekoGui::dataStore->start_minimal) NekoGui::dataStore->flag_tray = true;
 
     // load routing
+    NekoGui::dataStore->routing = std::make_unique<NekoGui::Routing>();
     NekoGui::dataStore->routing->fn = ROUTES_PREFIX + NekoGui::dataStore->active_routing;
     isLoaded = NekoGui::dataStore->routing->Load();
     if (!isLoaded) {

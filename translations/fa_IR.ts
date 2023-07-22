@@ -244,6 +244,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Timeout (s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1344,7 +1348,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Default</source>
-        <translation>پیش فرض</translation>
+        <translation type="vanished">پیش فرض</translation>
     </message>
     <message>
         <source>Load routing and apply: %1</source>
@@ -1692,6 +1696,10 @@ Direct: %2</source>
     <message>
         <source>As Subscription (add to this group)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">پیش فرض</translation>
     </message>
 </context>
 <context>

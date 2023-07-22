@@ -244,6 +244,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>下载测试 URL</translation>
     </message>
     <message>
+        <source>Timeout (s)</source>
+        <translation>超时（秒）</translation>
+    </message>
+    <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
         <translation>开启后可能能缓解 TLS in TLS 特征。</translation>
     </message>
@@ -1194,7 +1198,7 @@ This needs to be run NekoBox with administrator privileges.</source>
     </message>
     <message>
         <source>Default</source>
-        <translation>默认</translation>
+        <translation type="vanished">默认</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1686,6 +1690,10 @@ Release note:
     <message>
         <source>As Subscription (add to this group)</source>
         <translation>作为订阅（添加到该组）</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">默认</translation>
     </message>
 </context>
 <context>
