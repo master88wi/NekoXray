@@ -164,10 +164,6 @@ namespace NekoGui_fmt {
                 // 不使用 flow
                 flow = "";
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> 9fe08ca20d6e851db49838993b32c4084a9e8bc0
             outbound["uuid"] = password.trimmed();
             outbound["flow"] = flow;
             // outbound["encryption"] = encryption; // Will be enabled in the feature
