@@ -212,7 +212,7 @@ jobs:
           mkdir -p nekoray
           cp $version_standalone-linux64.zip nekoray/nekoray.zip
           ####
-          bash ../libs/package_arch.sh
+          bash ../libs/package_arch.sh ${{ github.event.inputs.tag }}
           sudo mv nekoray/nekoray.pkg.tar.zst ./$version_standalone-linux64.pkg.tar.zst
           sudo rm -rf nekoray
       - name: Pack AppImage
