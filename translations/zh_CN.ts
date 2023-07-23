@@ -883,7 +883,7 @@ This needs to be run NekoBox with administrator privileges.</source>
     </message>
     <message>
         <source>Auth Payload</source>
-        <translation>认证有效载荷</translation>
+        <translation>认证密钥</translation>
     </message>
 </context>
 <context>
