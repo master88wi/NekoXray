@@ -12,6 +12,7 @@
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QTimer>
 
 class ExtraCoreWidget : public QWidget {
 public:
@@ -77,6 +78,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_INT(inbound_socks_port)
     D_LOAD_INT_ENABLE(inbound_http_port, http_enable)
     D_LOAD_INT(test_concurrent)
+    D_LOAD_INT(test_download_timeout)
     D_LOAD_STRING(test_latency_url)
     D_LOAD_STRING(test_download_url)
 
@@ -157,6 +159,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     D_LOAD_BOOL(sub_use_proxy)
     D_LOAD_BOOL(sub_clear)
     D_LOAD_BOOL(sub_insecure)
+    D_LOAD_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
 
@@ -265,6 +268,7 @@ void DialogBasicSettings::accept() {
     D_SAVE_INT(inbound_socks_port)
     D_SAVE_INT_ENABLE(inbound_http_port, http_enable)
     D_SAVE_INT(test_concurrent)
+    D_SAVE_INT(test_download_timeout)
     D_SAVE_STRING(test_latency_url)
     D_SAVE_STRING(test_download_url)
 
@@ -296,10 +300,17 @@ void DialogBasicSettings::accept() {
 
     // Subscription
 
+    if (ui->sub_auto_update_enable->isChecked()) {
+        TM_auto_update_subsctiption_Reset_Minute(ui->sub_auto_update->text().toInt());
+    } else {
+        TM_auto_update_subsctiption_Reset_Minute(0);
+    }
+
     NekoGui::dataStore->user_agent = ui->user_agent->text();
     D_SAVE_BOOL(sub_use_proxy)
     D_SAVE_BOOL(sub_clear)
     D_SAVE_BOOL(sub_insecure)
+    D_SAVE_INT_ENABLE(sub_auto_update, sub_auto_update_enable)
 
     // Core
 
@@ -406,6 +417,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
     QCheckBox *core_box_enable_clash_api;
     MyLineEdit *core_box_clash_api;
     MyLineEdit *core_box_clash_api_secret;
+    MyLineEdit *core_box_clash_api_ui;
     MyLineEdit *core_box_underlying_dns;
     QCheckBox *core_ray_direct_dns;
     QCheckBox *core_ray_windows_disable_auto_interface;
@@ -440,6 +452,12 @@ void DialogBasicSettings::on_core_settings_clicked() {
         core_box_clash_api_secret->setText(NekoGui::dataStore->core_box_clash_api_secret);
         layout->addWidget(core_box_clash_api_secret_l, ++line, 0);
         layout->addWidget(core_box_clash_api_secret, line, 1);
+        //
+        auto core_box_clash_api_ui_l = new QLabel("Clash Dashboard");
+        core_box_clash_api_ui = new MyLineEdit;
+        core_box_clash_api_ui->setText(NekoGui::dataStore->core_box_clash_api_ui);
+        layout->addWidget(core_box_clash_api_ui_l, ++line, 0);
+        layout->addWidget(core_box_clash_api_ui, line, 1);
     } else {
         auto core_ray_direct_dns_l = new QLabel("NKR_CORE_RAY_DIRECT_DNS");
         core_ray_direct_dns_l->setToolTip(tr("If you Tun Mode is not working, try to change this option."));
@@ -474,6 +492,7 @@ void DialogBasicSettings::on_core_settings_clicked() {
         if (IS_NEKO_BOX) {
             NekoGui::dataStore->core_box_clash_api = core_box_clash_api->text().toInt() * (core_box_enable_clash_api->isChecked() ? 1 : -1);
             NekoGui::dataStore->core_box_clash_api_secret = core_box_clash_api_secret->text();
+            NekoGui::dataStore->core_box_clash_api_ui = core_box_clash_api_ui->text();
         } else {
             NekoGui::dataStore->core_ray_direct_dns = core_ray_direct_dns->isChecked();
             NekoGui::dataStore->core_ray_freedom_domainStrategy = core_ray_freedom_domainStrategy->currentText();

@@ -1,4 +1,5 @@
 #include "NekoGui.hpp"
+#include "fmt/Preset.hpp"
 
 #include <QFile>
 #include <QDir>
@@ -228,6 +229,7 @@ namespace NekoGui {
         _add(new configItem("user_agent", &user_agent, itemType::string));
         _add(new configItem("test_url", &test_latency_url, itemType::string));
         _add(new configItem("test_url_dl", &test_download_url, itemType::string));
+        _add(new configItem("test_dl_timeout", &test_download_timeout, itemType::integer));
         _add(new configItem("current_group", &current_group, itemType::integer));
         _add(new configItem("inbound_address", &inbound_address, itemType::string));
         _add(new configItem("inbound_socks_port", &inbound_socks_port, itemType::integer));
@@ -235,6 +237,7 @@ namespace NekoGui {
         _add(new configItem("log_level", &log_level, itemType::string));
         _add(new configItem("mux_protocol", &mux_protocol, itemType::string));
         _add(new configItem("mux_concurrency", &mux_concurrency, itemType::integer));
+        _add(new configItem("mux_padding", &mux_padding, itemType::boolean));
         _add(new configItem("mux_default_on", &mux_default_on, itemType::boolean));
         _add(new configItem("mux_padding", &mux_padding, itemType::boolean));
         _add(new configItem("traffic_loop_interval", &traffic_loop_interval, itemType::integer));
@@ -269,6 +272,7 @@ namespace NekoGui {
         _add(new configItem("sp_format", &system_proxy_format, itemType::string));
         _add(new configItem("sub_clear", &sub_clear, itemType::boolean));
         _add(new configItem("sub_insecure", &sub_insecure, itemType::boolean));
+        _add(new configItem("sub_auto_update", &sub_auto_update, itemType::integer));
         _add(new configItem("enable_js_hook", &enable_js_hook, itemType::integer));
         _add(new configItem("log_ignore", &log_ignore, itemType::stringList));
         _add(new configItem("start_minimal", &start_minimal, itemType::boolean));
@@ -277,6 +281,7 @@ namespace NekoGui {
         _add(new configItem("utlsFingerprint", &utlsFingerprint, itemType::string));
         _add(new configItem("core_box_clash_api", &core_box_clash_api, itemType::integer));
         _add(new configItem("core_box_clash_api_secret", &core_box_clash_api_secret, itemType::string));
+        _add(new configItem("core_box_clash_api_ui", &core_box_clash_api_ui, itemType::string));
         _add(new configItem("core_box_underlying_dns", &core_box_underlying_dns, itemType::string));
         _add(new configItem("core_ray_direct_dns", &core_ray_direct_dns, itemType::boolean));
         _add(new configItem("core_ray_freedom_domainStrategy", &core_ray_freedom_domainStrategy, itemType::string));
@@ -315,6 +320,10 @@ namespace NekoGui {
                 "domain:crashlytics.com\n"
                 "domain:google-analytics.com";
         }
+        if (IS_NEKO_BOX) {
+            if (!Preset::SingBox::DomainStrategy.contains(domain_strategy)) domain_strategy = "";
+            if (!Preset::SingBox::DomainStrategy.contains(outbound_domain_strategy)) outbound_domain_strategy = "";
+        }
         _add(new configItem("direct_ip", &this->direct_ip, itemType::string));
         _add(new configItem("direct_domain", &this->direct_domain, itemType::string));
         _add(new configItem("proxy_ip", &this->proxy_ip, itemType::string));
@@ -338,31 +347,31 @@ namespace NekoGui {
 
     QString Routing::DisplayRouting() const {
         return QString("[Proxy] %1\n[Proxy] %2\n[Direct] %3\n[Direct] %4\n[Block] %5\n[Block] %6\n[Default Outbound] %7\n[DNS] %8")
-            .arg(SplitLinesSkipSharp(proxy_domain).join(","))
-            .arg(SplitLinesSkipSharp(proxy_ip).join(","))
-            .arg(SplitLinesSkipSharp(direct_domain).join(","))
-            .arg(SplitLinesSkipSharp(direct_ip).join(","))
-            .arg(SplitLinesSkipSharp(block_domain).join(","))
-            .arg(SplitLinesSkipSharp(block_ip).join(","))
+            .arg(SplitLinesSkipSharp(proxy_domain).join(","), 10)
+            .arg(SplitLinesSkipSharp(proxy_ip).join(","), 10)
+            .arg(SplitLinesSkipSharp(direct_domain).join(","), 10)
+            .arg(SplitLinesSkipSharp(direct_ip).join(","), 10)
+            .arg(SplitLinesSkipSharp(block_domain).join(","), 10)
+            .arg(SplitLinesSkipSharp(block_ip).join(","), 10)
             .arg(def_outbound)
             .arg(use_dns_object ? "DNS Object" : "Simple DNS");
     }
 
     QStringList Routing::List() {
-        QStringList l;
-        QDir d;
-        if (d.exists(ROUTES_PREFIX)) {
-            QDir dr(ROUTES_PREFIX);
-            return dr.entryList(QDir::Files);
-        }
-        return l;
+        QDir dr(ROUTES_PREFIX);
+        return dr.entryList(QDir::Files);
     }
 
-    void Routing::SetToActive(const QString &name) {
+    bool Routing::SetToActive(const QString &name) {
+        NekoGui::dataStore->routing = std::make_unique<Routing>();
+        NekoGui::dataStore->routing->load_control_must = true;
         NekoGui::dataStore->routing->fn = ROUTES_PREFIX + name;
-        NekoGui::dataStore->routing->Load();
-        NekoGui::dataStore->active_routing = name;
-        NekoGui::dataStore->Save();
+        auto ok = NekoGui::dataStore->routing->Load();
+        if (ok) {
+            NekoGui::dataStore->active_routing = name;
+            NekoGui::dataStore->Save();
+        }
+        return ok;
     }
 
     // NO default extra core

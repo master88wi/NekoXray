@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ $1 = --help ]; then
+  echo "This is not real pkexec."
+  exit 0
+fi
+
+TO_EXEC="$@"
+
+if [ $1 = --keep-cwd ]; then
+  TO_EXEC="${@:2}"
+fi
+
+$TO_EXEC

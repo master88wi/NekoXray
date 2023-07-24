@@ -244,6 +244,18 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation>下载测试 URL</translation>
     </message>
     <message>
+        <source>Timeout (s)</source>
+        <translation>超时（秒）</translation>
+    </message>
+    <message>
+        <source>Automatic update</source>
+        <translation>自动更新订阅</translation>
+    </message>
+    <message>
+        <source>Interval (minute, invalid if less than 30)</source>
+        <translation>时间间隔（分钟，少于 30 分钟无效）</translation>
+    </message>
+    <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
         <translation>开启后可能能缓解 TLS in TLS 特征。</translation>
     </message>
@@ -313,6 +325,18 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Clear</source>
         <translation>清除</translation>
+    </message>
+    <message>
+        <source>Skip automatic update</source>
+        <translation>跳过自动更新</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>通用</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation>分享</translation>
     </message>
 </context>
 <context>
@@ -693,6 +717,14 @@ These settings can be changed later.</source>
         <source>Format</source>
         <translation>格式化</translation>
     </message>
+    <message>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
+        <translation>此项尤为重要，建议使用默认值 &quot;localhost&quot;。
+如果默认值不工作，可以尝试更改为 &quot;223.5.5.5&quot;。
+更多信息，请参阅文档 &quot;配置/DNS&quot;。</translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -879,7 +911,7 @@ This needs to be run NekoBox with administrator privileges.</source>
     </message>
     <message>
         <source>Auth Payload</source>
-        <translation>认证有效载荷</translation>
+        <translation>认证密钥</translation>
     </message>
 </context>
 <context>
@@ -932,8 +964,12 @@ This needs to be run NekoBox with administrator privileges.</source>
         <translation>插件</translation>
     </message>
     <message>
-        <source>Server support is required</source>
-        <translation>需要服务器支持</translation>
+        <source>Version of UDP over TCP protocol, server support is required.</source>
+        <translation>UDP over TCP 协议版本，需要服务器支持。</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>关闭</translation>
     </message>
 </context>
 <context>
@@ -956,6 +992,14 @@ This needs to be run NekoBox with administrator privileges.</source>
     <message>
         <source>Password</source>
         <translation>密码</translation>
+    </message>
+    <message>
+        <source>Can be set in the feature.</source>
+        <translation>将在未来开启。</translation>
+    </message>
+    <message>
+        <source>encryption</source>
+        <translation>加密</translation>
     </message>
 </context>
 <context>
@@ -1182,7 +1226,7 @@ This needs to be run NekoBox with administrator privileges.</source>
     </message>
     <message>
         <source>Default</source>
-        <translation>默认</translation>
+        <translation type="vanished">默认</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1674,6 +1718,10 @@ Release note:
     <message>
         <source>As Subscription (add to this group)</source>
         <translation>作为订阅（添加到该组）</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>默认</translation>
     </message>
 </context>
 <context>

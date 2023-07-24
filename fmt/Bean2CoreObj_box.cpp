@@ -2,7 +2,7 @@
 #include "fmt/includes.h"
 
 namespace NekoGui_fmt {
-    void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject *outbound) {
+    void V2rayStreamSettings::BuildStreamSettingsSingBox(QJsonObject* outbound) {
         // https://sing-box.sagernet.org/configuration/shared/v2ray-transport
 
         if (network != "tcp") {
@@ -106,7 +106,16 @@ namespace NekoGui_fmt {
         outbound["server_port"] = serverPort;
         outbound["method"] = method;
         outbound["password"] = password;
-        outbound["udp_over_tcp"] = uot;
+
+        if (uot != 0) {
+            QJsonObject udp_over_tcp{
+                {"enabled", true},
+                {"version", uot},
+            };
+            outbound["udp_over_tcp"] = udp_over_tcp;
+        } else {
+            outbound["udp_over_tcp"] = false;
+        }
 
         if (!plugin.trimmed().isEmpty()) {
             outbound["plugin"] = SubStrBefore(plugin, ";");
@@ -148,8 +157,16 @@ namespace NekoGui_fmt {
 
         QJsonObject settings;
         if (proxy_type == proxy_VLESS) {
+            if (flow.right(7) == "-udp443") {
+                // 检查末尾是否包含"-udp443"，如果是，则删去
+                flow.chop(7);
+            } else if (flow == "none") {
+                // 不使用 flow
+                flow = "";
+            }
             outbound["uuid"] = password.trimmed();
             outbound["flow"] = flow;
+            // outbound["encryption"] = encryption; // Will be enabled in the feature
         } else {
             outbound["password"] = password;
         }
@@ -162,6 +179,29 @@ namespace NekoGui_fmt {
     CoreObjOutboundBuildResult WireGuardBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 
+        // reserved: string to int
+        QJsonArray reservedJsonArray;
+        if (!reserved.isEmpty()) {
+            if (reserved.indexOf(',') != std::string::npos) {
+                QStringList reservedList = reserved.split(",");
+                QList<int> reservedIntList;
+
+                foreach (const QString& str, reservedList) {
+                    int number = str.toInt();
+                    reservedIntList.append(number);
+                }
+                reservedJsonArray = QList2QJsonArray(reservedIntList);
+            } else {
+                QByteArray decoded = QByteArray::fromBase64(reserved.toUtf8());
+                for (int i = 0; i < decoded.size(); i++) {
+                    int value = static_cast<unsigned char>(decoded[i]);
+                    reservedJsonArray.append(value);
+                }
+            }
+        } else {
+            reservedJsonArray = QJsonArray();
+        }
+
         QJsonObject outbound{
             {"type", "wireguard"},
             {"server", serverAddress},
@@ -170,7 +210,7 @@ namespace NekoGui_fmt {
             {"private_key", private_key},
             {"peer_public_key", peer_public_key},
             {"pre_shared_key", pre_shared_key},
-            {"reserved", reserved},
+            {"reserved", reservedJsonArray},
             {"mtu", wireguard_mtu},
         };
 

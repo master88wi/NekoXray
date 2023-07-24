@@ -131,7 +131,7 @@ jobs:
           else
             cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release ..
           fi
-          ninja
+          ninja -j4
           cd ..
           ./libs/deploy_windows64.sh
       - name: Linux - Generate MakeFile and Build
@@ -142,7 +142,7 @@ jobs:
             -v $PWD:/nekoray \
             -w /nekoray \
             ghcr.io/matsuridayo/debian10-qt5:20230131 \
-            bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja && popd &&./libs/deploy_linux64.sh"
+            bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja -j4 && popd &&./libs/deploy_linux64.sh"
       # ========================================================================================================= Deployments
       - name: Tar files
         shell: bash
@@ -202,6 +202,18 @@ jobs:
           ####
           bash ../libs/package_debian.sh ${{ github.event.inputs.tag }}
           mv nekoray.deb $version_standalone-debian-x64.deb
+          sudo rm -rf nekoray
+      - name: Pack Arch
+        if: github.event.inputs.publish != 'y'
+        run: |
+          source libs/deploy_common.sh
+          find . -name artifacts.tgz | xargs -n1 tar xvzf
+          cd deployment
+          mkdir -p nekoray
+          cp $version_standalone-linux64.zip nekoray/nekoray.zip
+          ####
+          bash ../libs/package_arch.sh ${{ github.event.inputs.tag }}
+          sudo mv nekoray/nekoray.pkg.tar.zst ./$version_standalone-linux64.pkg.tar.zst
           sudo rm -rf nekoray
       - name: Pack AppImage
         run: |

@@ -12,6 +12,7 @@ namespace NekoGui_fmt {
 
         QString password = "";
         QString flow = "";
+        QString encryption = "none";
 
         std::shared_ptr<V2rayStreamSettings> stream = std::make_shared<V2rayStreamSettings>();
 
@@ -19,6 +20,7 @@ namespace NekoGui_fmt {
             proxy_type = _proxy_type;
             _add(new configItem("pass", &password, itemType::string));
             _add(new configItem("flow", &flow, itemType::string));
+            _add(new configItem("encryption", &encryption, itemType::string));
             _add(new configItem("stream", dynamic_cast<JsonStore *>(stream.get()), itemType::jsonStore));
         };
 

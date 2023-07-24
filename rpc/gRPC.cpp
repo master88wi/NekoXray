@@ -58,11 +58,6 @@ namespace QtGrpc {
         QString serviceName;
         QByteArray nekoray_auth;
 
-        // TODO Fixed?
-        // https://github.com/semlanik/qtprotobuf/issues/116
-        //        setCachingEnabled:  5  bytesDownloaded
-        //        QNetworkReplyImpl: backend error: caching was enabled after some bytes had been written
-
         // async
         QNetworkReply *post(const QString &method, const QString &service, const QByteArray &args) {
             QUrl callUrl = url_base + "/" + service + "/" + method;
@@ -119,9 +114,7 @@ namespace QtGrpc {
                 abortTimer = new QTimer;
                 abortTimer->setSingleShot(true);
                 abortTimer->setInterval(timeout_ms);
-                QObject::connect(abortTimer, &QTimer::timeout, abortTimer, [=]() {
-                    networkReply->abort();
-                });
+                QObject::connect(abortTimer, &QTimer::timeout, networkReply, &QNetworkReply::abort);
                 abortTimer->start();
             }
 

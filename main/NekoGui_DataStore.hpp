@@ -14,7 +14,7 @@ namespace NekoGui {
         QString custom = "{\"rules\": []}";
 
         // DNS
-        QString remote_dns = "https://8.8.8.8/dns-query";
+        QString remote_dns = "https://dns.google/dns-query";
         QString remote_dns_strategy = "";
         QString direct_dns = "localhost";
         QString direct_dns_strategy = "";
@@ -33,7 +33,7 @@ namespace NekoGui {
 
         static QStringList List();
 
-        static void SetToActive(const QString &name);
+        static bool SetToActive(const QString &name);
     };
 
     class ExtraCore : public JsonStore {
@@ -74,7 +74,7 @@ namespace NekoGui {
         QString appdataDir = "";
         QStringList ignoreConnTag = {};
 
-        Routing *routing = new Routing;
+        std::unique_ptr<Routing> routing;
         int imported_count = 0;
         bool refreshing_group_list = false;
         bool refreshing_group = false;
@@ -88,6 +88,7 @@ namespace NekoGui {
         bool flag_debug = false;
         bool flag_linux_run_core_as_admin = false;
         bool flag_restart_tun_on = false;
+        bool flag_reorder = false;
 
         // Saved
 
@@ -95,13 +96,14 @@ namespace NekoGui {
         QString log_level = "warning";
         QString test_latency_url = "http://cp.cloudflare.com/";
         QString test_download_url = "http://cachefly.cachefly.net/10mb.test";
+        int test_download_timeout = 30;
         int test_concurrent = 5;
         int traffic_loop_interval = 1000;
         bool connection_statistics = false;
         int current_group = 0; // group id
         QString mux_protocol = "";
-        int mux_concurrency = 8;
         bool mux_padding = false;
+        int mux_concurrency = 8;
         bool mux_default_on = false;
         QString theme = "0";
         QString v2ray_asset_dir = "";
@@ -119,6 +121,7 @@ namespace NekoGui {
         bool sub_use_proxy = false;
         bool sub_clear = false;
         bool sub_insecure = false;
+        int sub_auto_update = -30;
 
         // Security
         bool skip_cert = false;
@@ -162,6 +165,7 @@ namespace NekoGui {
         // Core
         int core_box_clash_api = -9090;
         QString core_box_clash_api_secret = "";
+        QString core_box_clash_api_ui = "dashboard"; // in config path
         QString core_box_underlying_dns = "";
         bool core_ray_direct_dns = false;
         bool core_ray_windows_disable_auto_interface = false;

@@ -244,6 +244,18 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Timeout (s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interval (minute, invalid if less than 30)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -317,6 +329,18 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Clear</source>
         <translation type="unfinished">پاک کردن</translation>
+    </message>
+    <message>
+        <source>Skip automatic update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished">متداول</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished">اشتراک گذاری</translation>
     </message>
 </context>
 <context>
@@ -699,6 +723,12 @@ These settings can be changed later.</source>
         <source>Format</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
+If the default value does not work, try changing it to &quot;223.5.5.5&quot;.
+For more information, see the document &quot;Configuration/DNS&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogVPNSettings</name>
@@ -934,8 +964,12 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
         <translation>پلاگین</translation>
     </message>
     <message>
-        <source>Server support is required</source>
+        <source>Version of UDP over TCP protocol, server support is required.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished">خاموش</translation>
     </message>
 </context>
 <context>
@@ -958,6 +992,14 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     <message>
         <source>Password</source>
         <translation>کلمه عبور</translation>
+    </message>
+    <message>
+        <source>Can be set in the feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>encryption</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1332,7 +1374,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Default</source>
-        <translation>پیش فرض</translation>
+        <translation type="vanished">پیش فرض</translation>
     </message>
     <message>
         <source>Load routing and apply: %1</source>
@@ -1680,6 +1722,10 @@ Direct: %2</source>
     <message>
         <source>As Subscription (add to this group)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">پیش فرض</translation>
     </message>
 </context>
 <context>

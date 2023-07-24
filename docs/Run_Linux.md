@@ -10,6 +10,20 @@ sudo apt install ./nekoray-*-debian-x64.deb
 
 安装完成后，桌面快捷方式启动自带参数 `-appdata`，如果想要直接启动并使用之前的配置，注意附带本参数。
 
+安装后可免密码启动 TUN 模式。
+
+### Arch 系发行版
+
+由于本项目暂时没有提供 AUR 支持，所以暂时使用 `.pkg.tar.zst` 格式的安装包安装。
+
+```shell
+sudo pacman -U ./nekoray-*-linux64.pkg.tar.zst --needed
+```
+
+安装完成后，桌面快捷方式启动自带参数 `-appdata`，如果想要直接启动并使用之前的配置，注意附带本参数。
+
+安装后可免密码启动 TUN 模式。
+
 ### 其他发行版
 
 下载 .zip 文件，解压到合适的路径，开箱即用。

@@ -116,7 +116,13 @@ namespace NekoGui_fmt {
         server["port"] = serverPort;
         server["method"] = method;
         server["password"] = password;
-        server["uot"] = uot;
+
+        if (uot != 0) {
+            server["uot"] = true;
+            server["UoTVersion"] = uot;
+        } else {
+            server["uot"] = false;
+        }
 
         servers.push_back(server);
         settings["servers"] = servers;
@@ -163,6 +169,18 @@ namespace NekoGui_fmt {
 
         QJsonObject settings;
         if (proxy_type == proxy_VLESS) {
+
+            if (flow.right(7) == "-udp443") {
+                // 检查末尾是否包含"-udp443"，如果是，则保留
+                flow = flow;
+            } else if (flow == "none") {
+                // 不使用 flow
+                flow = "";
+            } else {
+                // 其余情况加上 -udp443 以放行 QUIC 流量
+                flow += "-udp443";
+            }
+            
             settings = QJsonObject{
                 {"vnext", QJsonArray{
                               QJsonObject{
@@ -171,7 +189,7 @@ namespace NekoGui_fmt {
                                   {"users", QJsonArray{
                                                 QJsonObject{
                                                     {"id", password.trimmed()},
-                                                    {"encryption", "none"},
+                                                    {"encryption", encryption},
                                                     {"flow", flow},
                                                 }}},
                               }}}};
@@ -197,6 +215,29 @@ namespace NekoGui_fmt {
 
         QJsonObject outbound{{"protocol", "wireguard"}};
 
+        // reserved: string to int
+        QJsonArray reservedJsonArray;
+        if (!reserved.isEmpty()) {
+            if (reserved.indexOf(',') != std::string::npos) {
+                QStringList reservedList = reserved.split(",");
+                QList<int> reservedIntList;
+
+                foreach (const QString& str, reservedList) {
+                    int number = str.toInt();
+                    reservedIntList.append(number);
+                }
+                reservedJsonArray = QList2QJsonArray(reservedIntList);
+            } else {
+                QByteArray decoded = QByteArray::fromBase64(reserved.toUtf8());
+                for (int i = 0; i < decoded.size(); i++) {
+                    int value = static_cast<unsigned char>(decoded[i]);
+                    reservedJsonArray.append(value);
+                }
+            }
+        } else {
+            reservedJsonArray = QJsonArray();
+        }
+
         QJsonObject settings{
             {"address", QList2QJsonArray(local_address.split(","))},
             {"secretKey", private_key},
@@ -207,7 +248,7 @@ namespace NekoGui_fmt {
                               {"preSharedKey", pre_shared_key},
                           }}},
             {"mtu", wireguard_mtu},
-            {"reserved", reserved},
+            {"reserved", reservedJsonArray},
         };
 
         outbound["settings"] = settings;
