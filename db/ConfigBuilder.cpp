@@ -864,7 +864,7 @@ namespace NekoGui {
             };
 
         // Fakedns
-        if (IS_NEKO_BOX_INTERNAL_TUN && dataStore->spmode_vpn && !status->forTest) {
+        if (dataStore->fake_dns && IS_NEKO_BOX_INTERNAL_TUN && dataStore->spmode_vpn && !status->forTest) {
             dnsServers += QJsonObject{
                 {"tag", "dns-fake"},
                 {"address", "fakeip"},
@@ -894,7 +894,7 @@ namespace NekoGui {
         add_rule_dns(status->domainListDNSDirect, "dns-direct");
 
         // fakedns rule
-        if (IS_NEKO_BOX_INTERNAL_TUN && dataStore->spmode_vpn && !status->forTest) {
+        if (dataStore->fake_dns && IS_NEKO_BOX_INTERNAL_TUN && dataStore->spmode_vpn && !status->forTest) {
             dnsRules += QJsonObject{
                 {"inbound", "tun-in"},
                 {"server", "dns-fake"},
@@ -1071,6 +1071,7 @@ namespace NekoGui {
                           .replace("%STRICT_ROUTE%", dataStore->vpn_strict_route ? "true" : "false")
                           .replace("%FINAL_OUT%", no_match_out)
                           .replace("%DNS_ADDRESS%", BOX_UNDERLYING_DNS)
+                          .replace("%FAKE_DNS_ENABLE%", dataStore->fake_dns ? "true" : "false")
                           .replace("%FAKE_DNS_INBOUND%", dataStore->fake_dns ? "tun-in" : "empty")
                           .replace("%PORT%", Int2String(dataStore->inbound_socks_port));
         // hook.js

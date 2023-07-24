@@ -248,6 +248,14 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Automatic update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interval (minute, invalid if less than 30)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -321,6 +329,18 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Clear</source>
         <translation type="unfinished">پاک کردن</translation>
+    </message>
+    <message>
+        <source>Skip automatic update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished">متداول</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished">اشتراک گذاری</translation>
     </message>
 </context>
 <context>
