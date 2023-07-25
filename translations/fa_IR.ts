@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Default: dir of &quot;nekoray&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مسیر پیش فرض &quot;nekoray&quot;</translation>
     </message>
     <message>
         <source>Concurrent</source>
@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>Enable hook.js</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فعال سازی hook.js</translation>
     </message>
     <message>
         <source>Advanced system proxy settings. Please select a format.</source>
@@ -207,53 +207,53 @@
     </message>
     <message>
         <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اثرانگشت پیشفرض uTLS</translation>
     </message>
     <message>
         <source>Core Options</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیمات هسته</translation>
     </message>
     <message>
         <source>Override underlying DNS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لغو دی ان اس زیربنایی</translation>
     </message>
     <message>
         <source>It is recommended to leave it blank, but it sometimes does not work, at this time you can set this option.
 For NekoRay, this rewrites the underlying(localhost) DNS in Tun Mode.
 For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mode, and also URL Test.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پیشنهاد میشود که این گزینه را انتخاب نشده باقی بگذارید ، اما گاهی اوقات کار نمیکند در این مواقع شما میتوانید این گزینه را انتخاب کنید ، برای Nekoray این گزینه دی ان اس زیربنایی را در حالت تونل بازنویسی میکند ، و برای NekoBox این گزینه دی ان اس زیربنایی را هم در حالت تونل و هم در حالت معمولی و تست آدرس بازنویسی میکند</translation>
     </message>
     <message>
         <source>If you Tun Mode is not working, try to change this option.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اگر حالت تونل برای شما کار نمیکند ، این گزینه را تغییر دهید</translation>
     </message>
     <message>
         <source>Default On</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">به صورت پیشفرض فعال</translation>
     </message>
     <message>
         <source>Multiplex (mux)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Multiplex (mux)</translation>
     </message>
     <message>
         <source>Latency Test URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آدرس تست تاخیر</translation>
     </message>
     <message>
         <source>Download Test URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آدرس تست دانلود</translation>
     </message>
     <message>
         <source>Timeout (s)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تایم اوت (به ثانیه)</translation>
     </message>
     <message>
         <source>Automatic update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آپدیت اتوماتیک</translation>
     </message>
     <message>
         <source>Interval (minute, invalid if less than 30)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فاصله (به دقیقا ، اگر کمتر از ۳۰ باشد نادرست است)</translation>
     </message>
     <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
@@ -320,7 +320,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Front Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پروکسی front</translation>
     </message>
     <message>
         <source>None</source>
@@ -332,7 +332,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Skip automatic update</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لغو آپدیت اتوماتیک</translation>
     </message>
     <message>
         <source>Common</source>
@@ -415,7 +415,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Server name indication, clear text.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">شناسه نام سرور ، متن صریح</translation>
     </message>
     <message>
         <source>Application layer protocol negotiation, clear text. Please separate them with commas.</source>
@@ -435,11 +435,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>TLS Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیمات امنیت TLS</translation>
     </message>
     <message>
         <source>TLS Camouflage Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیمات استتار TLS</translation>
     </message>
     <message>
         <source>Reality public key. If not empty, turn TLS into REALITY.</source>
@@ -463,7 +463,7 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Apply settings to this group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیمات به این گروه اعمال شود</translation>
     </message>
     <message>
         <source>Multiplex</source>
@@ -471,11 +471,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Keep Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نگه داری مقدار پیشفرض</translation>
     </message>
     <message>
         <source>On</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فعال</translation>
     </message>
     <message>
         <source>Off</source>
@@ -483,11 +483,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تایید</translation>
     </message>
     <message>
         <source>Server support is required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نیازمند پشتیبانی در سمت سرور</translation>
     </message>
     <message>
         <source>Reality short id. Accept only one value.</source>
@@ -498,13 +498,13 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <name>DialogFirstSetup</name>
     <message>
         <source>First time setup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیم دفعه اول</translation>
     </message>
     <message>
         <source>It looks like you are using this software for the first time, please select a core.
 
 These settings can be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">به نظر میرسد که شما برای اولین بار است که از این نرم افزار استفاده میکنید ، لطفا یک هسته را انتخاب کنید ، این تنظیمات میتواند بعدا تغییر یابد.</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -512,7 +512,7 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">خروج</translation>
     </message>
 </context>
 <context>
@@ -531,7 +531,7 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Trigger main window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایش پنجره اصلی</translation>
     </message>
     <message>
         <source>System Proxy</source>
@@ -577,11 +577,11 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Remote DNS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">دی ان اس سمت-سرور</translation>
     </message>
     <message>
         <source>Direct DNS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">دی ان اس مستقیم</translation>
     </message>
     <message>
         <source>Enable DNS Routing</source>
@@ -589,7 +589,7 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Block</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مسدود کردن</translation>
     </message>
     <message>
         <source>Direct</source>
@@ -613,19 +613,19 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Mange route set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مدیریت مسیرها</translation>
     </message>
     <message>
         <source>Bypass LAN and China</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عبور ندادن ترافیک LAN و کشور چین</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">همگانی</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بارگیری</translation>
     </message>
     <message>
         <source>Save</source>
@@ -641,15 +641,15 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Load routing: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بارگیری مسیر : 1%</translation>
     </message>
     <message>
         <source>Save routing: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ذخیره مسیر : 1%</translation>
     </message>
     <message>
         <source>Remove routing: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حذف مسیر : 1%</translation>
     </message>
     <message>
         <source>Default Outbound</source>
@@ -657,11 +657,11 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Domain Strategy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">استراتژی دامنه</translation>
     </message>
     <message>
         <source>Server Address Strategy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">استراتژی آدرس سرور</translation>
     </message>
     <message>
         <source>Sniff result for routing</source>
@@ -677,11 +677,11 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>DNS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">دی ان اس</translation>
     </message>
     <message>
         <source>Simple DNS Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیمات دی ان اس ساده</translation>
     </message>
     <message>
         <source>Use DNS Object</source>
@@ -693,11 +693,11 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Simple Route</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مسیر ساده</translation>
     </message>
     <message>
         <source>Custom Route</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مسیر سفارشی</translation>
     </message>
     <message>
         <source>Custom Route (global)</source>
@@ -721,7 +721,7 @@ These settings can be changed later.</source>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فرمت</translation>
     </message>
     <message>
         <source>This is especially important and it is recommended to use the default value of &quot;localhost&quot;.
@@ -758,7 +758,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Whitelist mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حالت لیست سفید</translation>
     </message>
     <message>
         <source>Proxy CIDR</source>
@@ -766,11 +766,11 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Proxy Process Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام پروسه پراکسی</translation>
     </message>
     <message>
         <source>Troubleshooting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عیب یابی</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -782,7 +782,7 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
     <message>
         <source>Internal Tun</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حالت تونل داخلی</translation>
     </message>
     <message>
         <source>Add a tun inbound to the profile startup, instead of using two processes.
@@ -801,7 +801,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     <name>EditChain</name>
     <message>
         <source>Traffic order is from top to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عبور ترافیک از بالا به پایین است</translation>
     </message>
     <message>
         <source>Select Profile</source>
@@ -809,7 +809,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Name cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام نمیتواند خالی باشد</translation>
     </message>
 </context>
 <context>
@@ -824,11 +824,11 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فرمان</translation>
     </message>
     <message>
         <source>Config Suffix</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پسوند کانفیگ</translation>
     </message>
     <message>
         <source>Outbound JSON, please read the documentation.</source>
@@ -844,7 +844,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پیش نمایش</translation>
     </message>
     <message>
         <source>Preview replace</source>
@@ -860,7 +860,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Name cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام نمیتواند خالی باشد</translation>
     </message>
 </context>
 <context>
@@ -879,7 +879,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Download (Mbps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">دانلود (مگابیت بر ثانیه)</translation>
     </message>
     <message>
         <source>Disable MTU Discovery</source>
@@ -891,7 +891,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Allow Insecure</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اجازه ارتباطات ناامن داده شود</translation>
     </message>
     <message>
         <source>Hop Port</source>
@@ -899,7 +899,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Upload (Mbps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آپلود (مگابیت بر ثانیه)</translation>
     </message>
     <message>
         <source>Obfs Password</source>
@@ -1076,30 +1076,30 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Last update: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آخرین آپدیت : %1</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تایید</translation>
     </message>
     <message>
         <source>Remove %1?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حذف %1?</translation>
     </message>
 </context>
 <context>
     <name>JsonEditor</name>
     <message>
         <source>JSON Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ویرایشگر JSON</translation>
     </message>
     <message>
         <source>Format JSON</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فرمت JSON</translation>
     </message>
     <message>
         <source>Remove All Comments</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حذف همه کامنت ها</translation>
     </message>
     <message>
         <source>Json Editor</source>
@@ -1107,11 +1107,11 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Structure Preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پیش نمایش ساختار</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تایید</translation>
     </message>
     <message>
         <source>Json Contains Syntax Errors</source>
@@ -1123,7 +1123,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>You must correct these errors before continuing.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">شما باید این ایرادات را قبل از ادامه دادن اصلاح کنید</translation>
     </message>
     <message>
         <source>Syntax Errors</source>
@@ -1131,7 +1131,7 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
     </message>
     <message>
         <source>Please fix the JSON errors or remove the comments before continue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لطفا قبل از ادامه دادن ایرادات JSON را اصلاح کنید یا کامنت ها را حذف کنید</translation>
     </message>
 </context>
 <context>
@@ -1517,7 +1517,7 @@ End: %2</source>
     </message>
     <message>
         <source>Current Select</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">انتخاب فعلی</translation>
     </message>
     <message>
         <source>Show Window</source>
@@ -1529,15 +1529,15 @@ End: %2</source>
     </message>
     <message>
         <source>Please run NekoBox as admin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لطفا Nekobox را با مجوز ادمین اجرا کنید</translation>
     </message>
     <message>
         <source>Restart Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">راه اندازی مجدد پروکسی</translation>
     </message>
     <message>
         <source>If there is no response for a long time, it is recommended to restart the software.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اگر برای مدت زمان طولانی هیچ پاسخی دریافت نشد ، پیشنهاد میشود که نرم افزار را دوباره اجرا کنید</translation>
     </message>
     <message>
         <source>Failed to start profile %1</source>
@@ -1545,7 +1545,7 @@ End: %2</source>
     </message>
     <message>
         <source>Failed to stop, please restart the program.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">توقف ناموفق بود ، لطفا برنامه را دوباره اجرا کنید</translation>
     </message>
     <message>
         <source>Select mode, double-click or press Enter to select a profile, press ESC to exit.</source>
@@ -1553,7 +1553,7 @@ End: %2</source>
     </message>
     <message>
         <source>Latency</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تاخیر</translation>
     </message>
     <message>
         <source>UDP latency</source>
@@ -1561,7 +1561,7 @@ End: %2</source>
     </message>
     <message>
         <source>Download speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">سرعت دانلود</translation>
     </message>
     <message>
         <source>In and Out IP</source>
@@ -1569,11 +1569,11 @@ End: %2</source>
     </message>
     <message>
         <source>Test Options</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">گزینه های تست</translation>
     </message>
     <message>
         <source>Restart the program to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">برای مشاهده نتیجه برنامه را دوباره راه اندازی کنید</translation>
     </message>
 </context>
 <context>
@@ -1584,7 +1584,7 @@ End: %2</source>
     </message>
     <message>
         <source>Remove %1?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حذف %1?</translation>
     </message>
 </context>
 <context>
@@ -1636,12 +1636,12 @@ Release note:
     </message>
     <message>
         <source>url detected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آدرس شناسایی شد</translation>
     </message>
     <message>
         <source>%1
 How to update?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">چگونه بروزرسانی کنم ؟</translation>
     </message>
     <message>
         <source>Requesting subscription: %1</source>
@@ -1653,7 +1653,7 @@ How to update?</source>
     </message>
     <message>
         <source>Clearing servers...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پاک کردن سرورها</translation>
     </message>
     <message>
         <source>Added %1 profiles:
@@ -1664,7 +1664,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <source>Nothing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">خالی</translation>
     </message>
     <message>
         <source>Change of %1:</source>
@@ -1676,7 +1676,7 @@ Deleted %3 Profiles:
     </message>
     <message>
         <source>Core not found: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">هسته برنامه یافت نشد : %1</translation>
     </message>
     <message>
         <source>Proxy: %1
@@ -1705,7 +1705,7 @@ Direct: %2</source>
     </message>
     <message>
         <source>Core exited, restarting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">هسته برنامه متوقف شد ، در حال راه اندازی مجدد</translation>
     </message>
     <message>
         <source>Core exits too frequently, stop automatic restart this profile.</source>
