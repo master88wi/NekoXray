@@ -1421,10 +1421,6 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
         <translation>در حال اجرا نیست</translation>
     </message>
     <message>
-        <source>Running: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>None</source>
         <translatorcomment>هیچ یک</translatorcomment>
         <translation>هیچ یک</translation>
