@@ -22,9 +22,8 @@ optdepends=(
 source=(
     'nekoray.zip'
     'nekoXray.desktop'
-    'pkexec'
 )
-sha512sums=('SKIP' 'SKIP' 'SKIP')
+sha512sums=('SKIP' 'SKIP')
 
 # pkgver() {
 #     cd "${srcdir}/nekoray"
@@ -45,8 +44,5 @@ package() {
     # app
     mkdir -p ${pkgdir}/opt
     cp -r "${srcdir}/nekoray/" "${pkgdir}/opt/nekoXray/"
-    install -m755 "${srcdir}/pkexec" "${pkgdir}/opt/nekoXray/pkexec"
-    chmod +x ${pkgdir}/opt/nekoXray/pkexec
-    # start TUN mode without password
     setcap cap_net_admin=ep ${pkgdir}/opt/nekoXray/nekobox_core
 }

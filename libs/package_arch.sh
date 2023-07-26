@@ -6,7 +6,6 @@ cp ../libs/nekoXray.desktop nekoray/nekoXray.desktop
 cp ../libs/PKGBUILD nekoray/PKGBUILD
 sed "2s/.*/pkgver=${VERSION}/" nekoray/PKGBUILD > temp.txt && mv temp.txt nekoray/PKGBUILD
 rm temp.txt
-cp ../libs/pkexec nekoray/pkexec
 
 docker pull archlinux
 docker run --volume ${PWD}/nekoray/:/src archlinux \
