@@ -391,6 +391,7 @@ namespace NekoGui_sub {
                     bean->local_address = Node2QString(proxy["ip"], ",") + "," + Node2QString(proxy["ipv6"]);
                     bean->private_key = Node2QString(proxy["private-key"]);
                     bean->peer_public_key = Node2QString(proxy["public-key"]);
+                    bean->pre_shared_key = Node2QString(proxy["preshared-key"]);
                     bean->pre_shared_key = Node2QString(proxy["pre-shared-key"]);
                     //
                     if (proxy["reserved"].Type() == YAML::NodeType::Sequence) {
