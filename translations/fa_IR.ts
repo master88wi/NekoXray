@@ -1345,8 +1345,8 @@ https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tu
         <translation>لینک های انتخاب شده را کپی کنید</translation>
     </message>
     <message>
-        <source>Enable VPN</source>
-        <translation>فعال کردن vpn</translation>
+        <source>Enable Tun</source>
+        <translation>فعال کردن tun</translation>
     </message>
     <message>
         <source>Clone</source>
@@ -1690,10 +1690,6 @@ Direct: %2</source>
     <message>
         <source>Request with proxy but no profile started.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable VPN</source>
-        <translation type="obsolete">فعال کردن vpn</translation>
     </message>
     <message>
         <source>Enable System Proxy</source>
