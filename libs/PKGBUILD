@@ -3,7 +3,7 @@
 # Contributor: Nekoray_CI <noreply@chitang.dev>
 # Contributor: HystericalDragon <HystericalDragon@protonmail.com>
 pkgname='nekoXray-bin'
-pkgver=3.12
+pkgver=3.14
 pkgrel=1
 pkgdesc='Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)'
 arch=('x86_64')
@@ -32,9 +32,6 @@ sha512sums=('SKIP' 'SKIP')
 
 build() {
     unzip -o nekoray.zip
-    # remove pre-built Qt depends
-    rm -rf ${srcdir}/nekoray/usr
-    rm ${srcdir}/nekoray/launcher
 }
 
 package() {

@@ -16,7 +16,7 @@ Version: $version
 Architecture: amd64
 Maintainer: HystericalDragon HystericalDragon@protonmail.com
 Depends: libxcb-xinerama0, libqt5core5a, libqt5gui5, libqt5network5, libqt5widgets5, libqt5svg5, libqt5x11extras5, desktop-file-utils
-Description: Qt based cross-platform GUI proxy configuration manager (backend: v2ray / sing-box)
+Description: Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)
 EOF
 
 cat >nekoray/DEBIAN/postinst <<-EOF
@@ -25,15 +25,15 @@ if [ ! -s /usr/share/applications/nekoXray.desktop ]; then
 [Desktop Entry]
 Name=nekoXray
 Comment=Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)
-Exec=/opt/nekoray/nekoray -appdata
-Icon=/opt/nekoray/nekoray.png
+Exec=/opt/nekoXray/nekoray -appdata
+Icon=/opt/nekoXray/nekoray.png
 Terminal=false
 Type=Application
 Categories=Network;Application;
 END
 fi
 
-setcap cap_net_admin=ep /opt/nekoray/nekobox_core
+setcap cap_net_admin=ep /opt/nekoXray/nekobox_core
 
 update-desktop-database
 EOF
