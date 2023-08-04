@@ -1,5 +1,7 @@
 # NekoRay
 
+WARNING: This readme file is outdated.
+
 مدیریت پیکربندی پروکسی با رابط کاربری مبتنی بر QT , کراس پلتفرم . (بک اند : v2ray / sing-box )
 
 اکنون از Windows / Linux / macOS amd64 پشتیبانی می کند.

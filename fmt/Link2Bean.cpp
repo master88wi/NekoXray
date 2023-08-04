@@ -85,6 +85,7 @@ namespace NekoGui_fmt {
         // protocol
         if (proxy_type == proxy_VLESS) {
             flow = GetQueryValue(query, "flow", "");
+            encryption = GetQueryValue(query, "encryption", "");
         }
 
         return !(password.isEmpty() || serverAddress.isEmpty());
