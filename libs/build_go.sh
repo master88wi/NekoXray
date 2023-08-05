@@ -9,18 +9,23 @@ source libs/deploy_common.sh
 [ "$GOOS" == "darwin" ] && [ "$GOARCH" == "amd64" ] && DEST=$DEPLOYMENT/macos-amd64 || true
 [ "$GOOS" == "darwin" ] && [ "$GOARCH" == "arm64" ] && DEST=$DEPLOYMENT/macos-arm64 || true
 if [ -z $DEST ]; then
-  echo "Please set GOOS GOARCH"
-  exit 1
+  echo "You'd better set GOOS GOARCH"
+  DEST=$DEPLOYMENT/local
+else
+  # disable CGO while cross building
+  export CGO_ENABLED=0
 fi
 rm -rf $DEST
 mkdir -p $DEST
 
-export CGO_ENABLED=0
-
 #### Go: updater ####
 pushd go/cmd/updater
-[ "$GOOS" == "darwin" ] || go build -o $DEST -trimpath -ldflags "-w -s"
-[ "$GOOS" == "linux" ] && mv $DEST/updater $DEST/launcher || true
+if [ "$GOOS" != "darwin" ] || [ "$(uname)" != "Darwin" ]; then
+  go build -o $DEST -trimpath -ldflags "-w -s"
+fi
+if [ "$GOOS" == "linux" ] || [ "$(uname)" == "Linux" ]; then
+  mv $DEST/updater $DEST/launcher || true
+fi
 popd
 
 #### Go: nekoray_core ####
