@@ -10,10 +10,9 @@ git clone https://github.com/HystericalDragon/nekoXray.git --recursive
 
 条件：
 
-1. C++ 依赖：`protobuf yaml-cpp zxing-cpp` 已用包管理器安装，并符合版本要求。
-2. 已安装 `qtbase` `qtsvg` `qttools` `qtx11extras`
-3. 已安装 Qt `5.12.x` 或 `5.15.x`
-4. 系统为 `x86-64-linux-gnu`
+1. C++ 依赖：已安装 `protobuf yaml-cpp zxing-cpp` ，并符合版本要求。
+2. 已安装 `qtbase` `qtsvg` `qttools` `qtx11extras` 等 Qt 编译工具。
+3. 已安装 Qt。
 
 ```shell
 mkdir build
@@ -48,11 +47,17 @@ ninja
 2. `NKR_PACKAGE` 打开后，`NKR_LIBS` 的默认值为 `./libs/deps/package` ，具体依赖请看 `build_deps_all.sh`
 3. `NKR_PACKAGE_MACOS` 或 `NKR_PACKAGE` 打开后，应用将使用 appdata 目录存放配置，自动更新等功能将被禁用。
 
+示例：
+
+```shell
+cmake -GNinja -DQT_VERSION_MAJOR=6 -DNKR_PACKAGE=1 ..
+```
+
 ### C++ 部分
 
 当您的发行版没有上面几个 C++ 依赖包，或者版本不符合要求时，可以参考 `build_deps_all.sh` 编译脚本自行编译。
 
-条件： 已安装 Qt `5.12.x` 或 `5.15.x`
+条件： 已安装 Qt。
 
 #### 编译安装 C/C++ 依赖
 
@@ -76,3 +81,7 @@ ninja
 ### Go 部分编译
 
 请看 [Build_Core.md](./Build_Core.md)
+
+## 开发相关
+
+修改代码后可以不删除现有二进制文件，直接使用 `cmake` 和 `ninja` 编译，复用之前的二进制文件。

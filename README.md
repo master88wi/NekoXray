@@ -26,8 +26,19 @@ Support Windows / Linux out of the box now.
 
 ### Package
 
-1. AUR: [nekoray-git](https://aur.archlinux.org/packages/nekoray-git)
-2. Scoop extras: `scoop install nekoray`
+暂无。
+
+### Nightly Build
+
+每次在 dev 分支推送时构建。
+
+Build when pushing on the dev branch.
+
+[actions](https://github.com/HystericalDragon/nekoXray/actions/workflows/nightly.yml)
+
+警告：Nightly 版本不保证可用性。
+
+WARNING: You may can't use nightly version
 
 ## 更改记录 & 发布频道 / Changelog & Telegram channel
 

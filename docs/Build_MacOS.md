@@ -10,13 +10,13 @@ git clone https://github.com/HystericalDragon/nekoXray.git --recursive
 
 ## 先决条件
 
-1. 安装 `CMake` `Ninja` `npm`
-2. 安装 Qt `5.15.x` 编译环境，并设置好有关环境变量，以免 CMake 找不到 Qt。 (`qtbase` `qtsvg` `qttools`)
-3. 安装 `appdmg` (`sudo npm install -g appdmg`)
+1. 安装 `CMake` `Ninja` `npm`。
+2. 安装 Qt 编译环境，并设置好有关环境变量，以免 CMake 找不到 Qt。 (`qtbase` `qtsvg` `qttools`)
+3. 安装 `appdmg` (`npm install -g appdmg`)
 
 ## CMake 参数
 
-同 Build_Linux
+同 [Build_Linux](./Build_Linux.md)。
 
 ## C++ 部分
 
@@ -43,9 +43,11 @@ ninja
 
 ## 打包
 
-如有疑问，请参考[这个脚本](/libs/deploy_macos.sh)
+如有疑问，请参考[这个脚本](/libs/deploy_macos.sh)。
 
-### 准备core
+打包不是必须的，可以省略。
+
+### 准备 Core
 
 将 编译得到的 `nekoray_core` `nekobox_core` 放入 `build/nekoray.app/Contents/MacOS`
 
@@ -58,7 +60,7 @@ curl -Lso build/nekoray.app/Contents/MacOS/geoip.db "https://github.com/SagerNet
 curl -Lso build/nekoray.app/Contents/MacOS/geosite.db "https://github.com/SagerNet/sing-geosite/releases/latest/download/geosite.db"
 ```
 
-如果打包时没有包含geo文件，可在应用内设置 `v2ray资源路径` 代替。
+如果打包时没有包含 geo 文件，可在应用内设置 `v2ray资源路径` 代替。
 
 ### 在nekoray目录下打包
 

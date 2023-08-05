@@ -1,5 +1,7 @@
 ## Linux 安装
 
+建议使用打包格式安装，可以使用系统自带的运行库。
+
 ### Debian 系发行版
 
 使用 Debian 系发行版时，推荐使用 .deb 包安装：
@@ -31,8 +33,6 @@ sudo pacman -U ./nekoray-*-linux64.pkg.tar.zst --needed
 或下载 .AppImage，并使用 `chmod +x nekoray-*-AppImage-x64.AppImage` 给予可执行权限。
 
 具体使用方法见下文。
-
-或者使用 AUR `nekoray-git`。
 
 ## Linux 运行
 

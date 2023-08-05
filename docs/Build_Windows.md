@@ -16,6 +16,8 @@ git clone https://github.com/HystericalDragon/nekoXray.git --recursive
 
 ### 下载 Qt SDK
 
+_警告：这些库并非 Qt 官方发布，使用风险自负。_
+
 目前 Windows Release 使用的版本是 Qt 6.5.x
 
 下载解压后，将 bin 目录添加到环境变量。
