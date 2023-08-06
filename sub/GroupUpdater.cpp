@@ -250,7 +250,7 @@ namespace NekoGui_sub {
                             if (!path.isEmpty()) ssPlugin << "path=" + path;
                             // clash only: skip-cert-verify
                             // clash only: headers
-                            // clash: mux=?
+                             // clash: mux=?
                         }
                         bean->plugin = ssPlugin.join(";");
                     }
@@ -270,11 +270,11 @@ namespace NekoGui_sub {
                     if (type == "vless") {
                         bean->flow = Node2QString(proxy["flow"]);
                         bean->password = Node2QString(proxy["uuid"]);
-                        // meta vless xudp
-                        auto xudp = proxy["xudp"];
-                        if (xudp.IsDefined() && !xudp.IsNull() && Node2Bool(xudp) == false) {
-                            bean->stream->packet_encoding = "";
+                        // meta packet encoding
+                        if (Node2Bool(proxy["packet-addr"])) {
+                            bean->stream->packet_encoding = "packetaddr";
                         } else {
+                            // For VLESS, default to use xudp
                             bean->stream->packet_encoding = "xudp";
                         }
                     } else {
@@ -330,6 +330,10 @@ namespace NekoGui_sub {
                     bean->stream->alpn = Node2QStringList(proxy["alpn"]).join(",");
                     if (Node2Bool(proxy["tls"])) bean->stream->security = "tls";
                     if (Node2Bool(proxy["skip-cert-verify"])) bean->stream->allow_insecure = true;
+
+                    // meta packet encoding
+                    if (Node2Bool(proxy["xudp"])) bean->stream->packet_encoding = "xudp";
+                    if (Node2Bool(proxy["packet-addr"])) bean->stream->packet_encoding = "packetaddr";
 
                     // opts
                     auto ws = NodeChild(proxy, {"ws-opts", "ws-opt"});
