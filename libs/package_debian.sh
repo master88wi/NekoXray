@@ -5,13 +5,13 @@ version="$1"
 mkdir -p nekoray/DEBIAN
 mkdir -p nekoray/opt
 cp -r linux64 nekoray/opt/
-mv nekoray/opt/linux64 nekoray/opt/nekoXray
-rm -rf nekoray/opt/nekoXray/usr
-rm nekoray/opt/nekoXray/launcher
+mv nekoray/opt/linux64 nekoray/opt/NekoXray
+rm -rf nekoray/opt/NekoXray/usr
+rm nekoray/opt/NekoXray/launcher
 
 # basic
 cat >nekoray/DEBIAN/control <<-EOF
-Package: nekoXray
+Package: NekoXray
 Version: $version
 Architecture: amd64
 Maintainer: HystericalDragon HystericalDragon@protonmail.com
@@ -20,20 +20,20 @@ Description: Qt based cross-platform GUI proxy configuration manager (backend: X
 EOF
 
 cat >nekoray/DEBIAN/postinst <<-EOF
-if [ ! -s /usr/share/applications/nekoXray.desktop ]; then
-    cat >/usr/share/applications/nekoXray.desktop<<-END
+if [ ! -s /usr/share/applications/NekoXray.desktop ]; then
+    cat >/usr/share/applications/NekoXray.desktop<<-END
 [Desktop Entry]
-Name=nekoXray
+Name=NekoXray
 Comment=Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)
-Exec=/opt/nekoXray/nekoray -appdata
-Icon=/opt/nekoXray/nekoray.png
+Exec=/opt/NekoXray/nekoray -appdata
+Icon=/opt/NekoXray/nekoray.png
 Terminal=false
 Type=Application
 Categories=Network;Application;
 END
 fi
 
-setcap cap_net_admin=ep /opt/nekoXray/nekobox_core
+setcap cap_net_admin=ep /opt/NekoXray/nekobox_core
 
 update-desktop-database
 EOF

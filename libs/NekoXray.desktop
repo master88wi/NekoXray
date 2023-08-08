@@ -1,10 +1,10 @@
 [Desktop Entry]
 Terminal=false
 Type=Application
-Name=NekoXRay
+Name=NekoXray
 Categories=Network;
 Comment=Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)
-Comment[zh_CN]=基于 Qt 的跨平台代理配置管理器 (后端 v2ray / sing-box)
+Comment[zh_CN]=基于 Qt 的跨平台代理配置管理器 (后端 Xray / sing-box)
 Keywords=Internet;VPN;Proxy;Xray;sing-box;
 Exec=/opt/nekoXray/nekoray -appdata
 Icon=/opt/nekoXray/nekoray.png

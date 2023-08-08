@@ -10,8 +10,8 @@ rm nekoray.AppDir/launcher
 
 cat >nekoray.AppDir/nekoray.desktop <<-EOF
 [Desktop Entry]
-Name=nekoXray
-Exec=echo "NekoRay started"
+Name=NekoXray
+Exec=echo "NekoXray started"
 Icon=nekoray
 Type=Application
 Categories=Network
@@ -20,7 +20,7 @@ EOF
 cat >nekoray.AppDir/AppRun <<-EOF
 #!/bin/bash
 echo "PATH: \${PATH}"
-echo "NekoRay runing on: \$APPDIR"
+echo "NekoXray runing on: \$APPDIR"
 LD_LIBRARY_PATH=\${APPDIR}/usr/lib QT_PLUGIN_PATH=\${APPDIR}/usr/plugins \${APPDIR}/nekoray -appdata "\$@"
 EOF
 

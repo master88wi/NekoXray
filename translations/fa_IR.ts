@@ -793,7 +793,7 @@ This needs to be run NekoBox with administrator privileges.</source>
         <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
 
 If still not working, see documentation for more information.
-https://HystericalDragon.github.io/matsuridayo.github.io/n-configuration/#vpn-tun</source>
+https://AntiNeko.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

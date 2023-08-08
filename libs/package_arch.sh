@@ -2,7 +2,7 @@
 
 VERSION=$1
 
-cp ../libs/nekoXray.desktop nekoray/nekoXray.desktop
+cp ../libs/NekoXray.desktop nekoray/NekoXray.desktop
 cp ../libs/PKGBUILD nekoray/PKGBUILD
 sed "2s/.*/pkgver=${VERSION}/" nekoray/PKGBUILD > temp.txt && mv temp.txt nekoray/PKGBUILD
 
@@ -21,5 +21,5 @@ docker run --volume ${PWD}/nekoray/:/src archlinux \
     sudo -u user bash -c 'cd /src && \
     sudo pacman -Syu --noconfirm base-devel qt5-base qt5-svg qt5-tools qt5-x11extras protobuf yaml-cpp zxing-cpp unzip && \
     makepkg -s --noconfirm && \
-    find . -type f ! -name 'nekoXray-*.pkg.tar.zst' -delete && \
-    mv nekoXray-*.pkg.tar.zst nekoray.pkg.tar.zst'"
+    find . -type f ! -name 'NekoXray-*.pkg.tar.zst' -delete && \
+    mv NekoXray-*.pkg.tar.zst nekoray.pkg.tar.zst'"

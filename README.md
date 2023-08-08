@@ -1,4 +1,4 @@
-# NekoXRay / NekoBox For PC
+# NekoXray / NekoBox For PC
 
 Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)
 
@@ -18,9 +18,9 @@ Support Windows / Linux out of the box now.
 
 便携格式，无安装器。转到 Releases 下载预编译的二进制文件，解压后即可使用。
 
-[![GitHub All Releases](https://img.shields.io/github/downloads/HystericalDragon/nekoXray/total?label=downloads-total&logo=github&style=flat-square)](https://github.com/HystericalDragon/nekoXray/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/AntiNeko/NekoXray/total?label=downloads-total&logo=github&style=flat-square)](https://github.com/AntiNeko/NekoXray/releases)
 
-[下载 / Download](https://github.com/HystericalDragon/nekoXray/releases)
+[下载 / Download](https://github.com/AntiNeko/nekoXray/releases)
 
 [安装包的说明，如果你不知道要下载哪一个](https://github.com/MatsuriDayo/nekoray/wiki/Installation-package-description)
 
@@ -34,7 +34,7 @@ Support Windows / Linux out of the box now.
 
 Build when pushing on the dev branch.
 
-[actions](https://github.com/HystericalDragon/nekoXray/actions/workflows/nightly.yml)
+[actions](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml)
 
 警告：Nightly 版本不保证可用性。
 
@@ -46,8 +46,7 @@ https://t.me/Matsuridayo
 
 ## 项目主页 & 文档 / Homepage & Documents
 
-https://HystericalDragon.github.io/matsuridayo.github.io
-
+https://AntiNeko.github.io
 ## 代理 / Proxy
 
 * SOCKS (4/4a/5)

@@ -3,7 +3,7 @@ Tip: Passing the compilation does not mean that all functions are available, and
 ## پروژه Nekoray را از منبع آن دریافت کنید
 در `Terminal` در مسیر دلخواه خود، دستور زیر را وارد کنید و دکمه `return` را بفشارید.
 ```shell
-git clone https://github.com/HystericalDragon/nekoXray.git --recursive
+git clone https://github.com/AntiNeko/NekoXray.git --recursive
 ```
 اگر `git` روی دستگاه از پیش نصب نباشد، دستگاه، خودکار نصب آن را پیشنهاد می‌کند. مرحله‌های نصب را به انجام برسانید و سپس دوباره دستور پیش گفته را در `Terminal` اجرا کنید.
 
