@@ -1,6 +1,6 @@
 # NekoRay
 
-WARNING: This readme file is outdated.
+WARNING: This readme file is outdated, waiting for someone to translate it.
 
 مدیریت پیکربندی پروکسی با رابط کاربری مبتنی بر QT , کراس پلتفرم . (بک اند : v2ray / sing-box )
 

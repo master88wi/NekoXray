@@ -10,7 +10,7 @@ Support Windows / Linux out of the box now.
 
 ## Readme Translations
 
-中文 / English / [fa_IR](README_fa.md)
+中文 / English / ~~[fa_IR](./README_fa.md)~~ (It is outdated.)
 
 ## 下载 / Download
 
@@ -22,7 +22,7 @@ Support Windows / Linux out of the box now.
 
 [下载 / Download](https://github.com/AntiNeko/nekoXray/releases)
 
-[安装包的说明，如果你不知道要下载哪一个](https://github.com/MatsuriDayo/nekoray/wiki/Installation-package-description)
+[安装包的说明，如果你不知道要下载哪一个](https://github.com/AntiNeko/NekoXray/wiki/Installation%E2%80%90package%E2%80%90description)
 
 ### Package
 
@@ -34,7 +34,7 @@ Support Windows / Linux out of the box now.
 
 Build when pushing on the dev branch.
 
-[actions](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml)
+Download them in [actions](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml).
 
 警告：Nightly 版本不保证可用性。
 
@@ -42,11 +42,12 @@ WARNING: You may can't use nightly version
 
 ## 更改记录 & 发布频道 / Changelog & Telegram channel
 
-https://t.me/Matsuridayo
+https://t.me/AntiNek0
 
 ## 项目主页 & 文档 / Homepage & Documents
 
 https://AntiNeko.github.io
+
 ## 代理 / Proxy
 
 * SOCKS (4/4a/5)
@@ -65,6 +66,7 @@ https://AntiNeko.github.io
 ## 订阅 / Subscription
 
 * Raw: some widely used formats (like shadowsocks, clash and v2rayN)
+
 * 原始格式：一些广泛使用的格式（如 shadowsocks、clash 和 v2rayN）
 
 ## 运行参数
@@ -83,7 +85,7 @@ https://AntiNeko.github.io
 
 由于缺乏维护，不再提供 macOS 版本下载。
 
-您还可以在下面的存储库中非正式地获取更新版本。[非官方发布 / Unofficial releases](https://github.com/aaaamirabbas/nekoray-macos/releases)
+~~您还可以在下面的存储库中非正式地获取更新版本。[非官方发布 / Unofficial releases](https://github.com/aaaamirabbas/nekoray-macos/releases)~~
 
 仍可以参照下方教程自行编译，常见问题请参考历史 Issue，欢迎 Pull Request 修复。
 
