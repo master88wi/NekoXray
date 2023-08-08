@@ -131,7 +131,7 @@ jobs:
           else
             cmake -GNinja -DQT_VERSION_MAJOR=6 -DCMAKE_BUILD_TYPE=Release ..
           fi
-          ninja -j4
+          ninja -j2
           cd ..
           ./libs/deploy_windows64.sh
       - name: Linux - Generate MakeFile and Build
@@ -142,7 +142,7 @@ jobs:
             -v $PWD:/nekoray \
             -w /nekoray \
             ghcr.io/matsuridayo/debian10-qt5:20230131 \
-            bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja -j4 && popd &&./libs/deploy_linux64.sh"
+            bash -c "mkdir build && pushd build && cmake -GNinja -DCMAKE_BUILD_TYPE=Release .. && ninja -j2 && popd &&./libs/deploy_linux64.sh"
       # ========================================================================================================= Deployments
       - name: Tar files
         shell: bash
