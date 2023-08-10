@@ -57,6 +57,7 @@ https://AntiNeko.github.io
 * VLESS
 * Trojan
 * WireGuard
+* TUIC ( Custom Core or sing-box )
 * NaïveProxy ( Custom Core )
 * Hysteria ( Custom Core or sing-box )
 * Custom Outbound

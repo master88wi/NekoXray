@@ -7,5 +7,5 @@
 #include "TrojanVLESSBean.hpp"
 #include "WireGuardBean.hpp"
 #include "NaiveBean.hpp"
-#include "HysteriaBean.hpp"
+#include "QUICBean.hpp"
 #include "CustomBean.hpp"

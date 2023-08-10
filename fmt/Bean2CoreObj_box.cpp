@@ -214,36 +214,70 @@ namespace NekoGui_fmt {
         return result;
     }
 
-    CoreObjOutboundBuildResult HysteriaBean::BuildCoreObjSingBox() {
+    CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 
         QJsonObject coreTlsObj{
             {"enabled", true},
+            {"disable_sni", disableSni},
             {"insecure", allowInsecure},
             {"certificate", caText.trimmed()},
             {"server_name", sni},
         };
-        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QJsonArray{alpn};
+        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
 
-        QJsonObject coreHysteriaObj{
-            {"type", "hysteria"},
+        QJsonObject outbound{
             {"server", serverAddress},
             {"server_port", serverPort},
-            {"obfs", obfsPassword},
-            {"disable_mtu_discovery", disableMtuDiscovery},
-            {"recv_window", streamReceiveWindow},
-            {"recv_window_conn", connectionReceiveWindow},
-            {"up_mbps", uploadMbps},
-            {"down_mbps", downloadMbps},
             {"tls", coreTlsObj},
         };
 
-        if (!hopPort.trimmed().isEmpty()) coreHysteriaObj["hop_ports"] = hopPort;
+        if (proxy_type == proxy_Hysteria) {
+            outbound["type"] = "hysteria";
+            outbound["obfs"] = obfsPassword;
+            outbound["disable_mtu_discovery"] = disableMtuDiscovery;
+            outbound["recv_window"] = streamReceiveWindow;
+            outbound["recv_window_conn"] = connectionReceiveWindow;
+            outbound["up_mbps"] = uploadMbps;
+            outbound["down_mbps"] = downloadMbps;
+
+            if (!hopPort.trimmed().isEmpty()) outbound["hop_ports"] = hopPort;
+            if (authPayloadType == hysteria_auth_base64) outbound["auth"] = authPayload;
+            if (authPayloadType == hysteria_auth_string) outbound["auth_str"] = authPayload;
+        } else if (proxy_type == proxy_TUIC) {
+            outbound["type"] = "tuic";
+            outbound["uuid"] = uuid;
+            outbound["password"] = password;
+            outbound["congestion_control"] = congestionControl;
+            outbound["udp_relay_mode"] = udpRelayMode;
+            outbound["zero_rtt_handshake"] = zeroRttHandshake;
+            if (!heartbeat.trimmed().isEmpty()) outbound["heartbeat"] = heartbeat;
+        }
+
+        result.outbound = outbound;
+        return result;
+    }    CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() {
+        CoreObjOutboundBuildResult result;
+
+        QJsonObject coreTlsObj{
+            {"enabled", true},
+            {"disable_sni", disableSni},
+            {"insecure", allowInsecure},
+            {"certificate", caText.trimmed()},
+            {"server_name", sni},
+        };
+        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
+
+        QJsonObject outbound{
+            {"server", serverAddress},
+            {"server_port", serverPort},
+            {"tls", coreTlsObj},
+        };
 
         if (authPayloadType == hysteria_auth_base64) coreHysteriaObj["auth"] = authPayload;
         if (authPayloadType == hysteria_auth_string) coreHysteriaObj["auth_str"] = authPayload;
 
-        result.outbound = coreHysteriaObj;
+        result.outbound = outbound;
         return result;
     }
 
