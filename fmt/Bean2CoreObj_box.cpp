@@ -256,29 +256,6 @@ namespace NekoGui_fmt {
 
         result.outbound = outbound;
         return result;
-    }    CoreObjOutboundBuildResult QUICBean::BuildCoreObjSingBox() {
-        CoreObjOutboundBuildResult result;
-
-        QJsonObject coreTlsObj{
-            {"enabled", true},
-            {"disable_sni", disableSni},
-            {"insecure", allowInsecure},
-            {"certificate", caText.trimmed()},
-            {"server_name", sni},
-        };
-        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
-
-        QJsonObject outbound{
-            {"server", serverAddress},
-            {"server_port", serverPort},
-            {"tls", coreTlsObj},
-        };
-
-        if (authPayloadType == hysteria_auth_base64) coreHysteriaObj["auth"] = authPayload;
-        if (authPayloadType == hysteria_auth_string) coreHysteriaObj["auth_str"] = authPayload;
-
-        result.outbound = outbound;
-        return result;
     }
 
     CoreObjOutboundBuildResult CustomBean::BuildCoreObjSingBox() {
