@@ -65,10 +65,9 @@ namespace NekoGui_fmt {
 
         // protocol
         if (proxy_type == proxy_VLESS) {
-            if (!flow.isEmpty()) {
-                query.addQueryItem("flow", flow);
-            }
-            query.addQueryItem("encryption", encryption);
+            if (!flow.isEmpty()) query.addQueryItem("flow", flow);
+            if (!encryption.isEmpty()) query.addQueryItem("encryption", encryption);
+            if (!stream->packet_encoding.isEmpty()) query.addQueryItem("packetEncoding", stream->packet_encoding);
         }
 
         url.setQuery(query);
@@ -106,6 +105,7 @@ namespace NekoGui_fmt {
             {"port", Int2String(serverPort)},
             {"id", uuid},
             {"aid", Int2String(aid)},
+            {"packet_encoding", stream->packet_encoding},
             {"net", stream->network},
             {"host", stream->host},
             {"path", stream->path},

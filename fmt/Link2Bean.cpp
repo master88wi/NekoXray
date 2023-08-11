@@ -87,6 +87,7 @@ namespace NekoGui_fmt {
         if (proxy_type == proxy_VLESS) {
             flow = GetQueryValue(query, "flow", "");
             encryption = GetQueryValue(query, "encryption", "");
+            stream->packet_encoding = GetQueryValue(query, "packetEncoding", "");
         }
 
         return !(password.isEmpty() || serverAddress.isEmpty());
@@ -142,6 +143,7 @@ namespace NekoGui_fmt {
             // OPTIONAL
             name = objN["ps"].toString();
             aid = objN["aid"].toVariant().toInt();
+            stream->packet_encoding = objN["packet_encoding"].toString();
             stream->host = objN["host"].toString();
             stream->path = objN["path"].toString();
             stream->sni = objN["sni"].toString();

@@ -78,6 +78,7 @@ CMakeLists.txt.user*
 neko*_core
 .vscode
 .idea
+/.cache
 
 # Deploy
 /deployment
