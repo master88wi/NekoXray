@@ -39,7 +39,7 @@
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>MTU</string>
+      <string notr="true">MTU</string>
      </property>
     </widget>
    </item>
