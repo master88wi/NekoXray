@@ -28,4 +28,3 @@ namespace NekoGui_fmt {
         QString DisplayType() override { return "WireGuard"; };
     };
 } // namespace NekoGui_fmt
-

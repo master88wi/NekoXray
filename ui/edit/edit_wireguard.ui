@@ -21,12 +21,12 @@
     <widget class="QLineEdit" name="reserved"/>
    </item>
    <item row="4" column="0">
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="peerPublicKey_l">
      <property name="locale">
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>peer public key</string>
+      <string>Peer Public Key</string>
      </property>
     </widget>
    </item>
@@ -34,22 +34,22 @@
     <widget class="QLineEdit" name="private_key"/>
    </item>
    <item row="8" column="0">
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="mtu_l">
      <property name="locale">
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>mtu</string>
+      <string>MTU</string>
      </property>
     </widget>
    </item>
    <item row="6" column="0">
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="reserved_l">
      <property name="locale">
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>reserved</string>
+      <string>Reserved</string>
      </property>
     </widget>
    </item>
@@ -57,12 +57,12 @@
     <widget class="QLineEdit" name="local_address"/>
    </item>
    <item row="5" column="0">
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="preSharedKey_l">
      <property name="locale">
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>pre shared key</string>
+      <string>Pre Shared Key</string>
      </property>
     </widget>
    </item>
@@ -70,22 +70,22 @@
     <widget class="QLineEdit" name="pre_shared_key"/>
    </item>
    <item row="3" column="0">
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="privateKey_l">
      <property name="locale">
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>private key</string>
+      <string>Private Key</string>
      </property>
     </widget>
    </item>
    <item row="0" column="0">
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="localAddress_l">
      <property name="locale">
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="text">
-      <string>local address</string>
+      <string>Local Address</string>
      </property>
     </widget>
    </item>

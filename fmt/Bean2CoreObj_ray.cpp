@@ -169,7 +169,6 @@ namespace NekoGui_fmt {
 
         QJsonObject settings;
         if (proxy_type == proxy_VLESS) {
-
             if (flow.right(7) == "-udp443") {
                 // 检查末尾是否包含"-udp443"，如果是，则保留
                 flow = flow;
@@ -180,7 +179,7 @@ namespace NekoGui_fmt {
                 // 其余情况加上 -udp443 以放行 QUIC 流量
                 flow += "-udp443";
             }
-            
+
             settings = QJsonObject{
                 {"vnext", QJsonArray{
                               QJsonObject{
