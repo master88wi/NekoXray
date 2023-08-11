@@ -15,6 +15,7 @@ namespace NekoGui_fmt {
         QString header_type = "";
         // tls
         QString sni = "";
+        bool disable_sni = false;
         QString alpn = "";
         QString certificate = "";
         QString utlsFingerprint = "";
@@ -36,6 +37,7 @@ namespace NekoGui_fmt {
             _add(new configItem("path", &path, itemType::string));
             _add(new configItem("host", &host, itemType::string));
             _add(new configItem("sni", &sni, itemType::string));
+            _add(new configItem("disable_sni", &disable_sni, itemType::integer));
             _add(new configItem("alpn", &alpn, itemType::string));
             _add(new configItem("cert", &certificate, itemType::string));
             _add(new configItem("insecure", &allow_insecure, itemType::boolean));

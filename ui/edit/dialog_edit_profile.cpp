@@ -98,6 +98,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
             if (IS_NEKO_BOX) {
                 ui->reality_spx->hide();
                 ui->reality_spx_l->hide();
+            } else {
+                ui->disable_sni->hide();
             }
         } else {
             ui->security_box->setVisible(false);
@@ -225,6 +227,7 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->path->setText(stream->path);
         ui->host->setText(stream->host);
         ui->sni->setText(stream->sni);
+        ui->disable_sni->setChecked(stream->disable_sni);
         ui->alpn->setText(stream->alpn);
         ui->utlsFingerprint->setCurrentText(stream->utlsFingerprint);
         ui->insecure->setChecked(stream->allow_insecure);
@@ -360,6 +363,7 @@ bool DialogEditProfile::onEnd() {
         stream->path = ui->path->text();
         stream->host = ui->host->text();
         stream->sni = ui->sni->text();
+        stream->disable_sni = ui->disable_sni->isChecked();
         stream->alpn = ui->alpn->text();
         stream->utlsFingerprint = ui->utlsFingerprint->currentText();
         stream->allow_insecure = ui->insecure->isChecked();

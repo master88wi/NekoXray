@@ -67,6 +67,22 @@ namespace NekoGui_fmt {
                     {"fingerprint", fp},
                 };
             }
+
+            // disable_sni
+            if (disable_sni) {
+                if (reality_pbk.trimmed().isEmpty()) {
+                    // 不使用 REALITY 时，使用 sing-box 提供的 disable SNI
+                    // REALITY --> uTLS
+                    // disable_sni -x> uTLS
+                    tls["disable_sni"] = disable_sni;
+                    tls["utls"] = QJsonObject{
+                        {"enabled", false},
+                    };
+                } else {
+                    tls["server_name"] = "";
+                }
+            }
+
             outbound->insert("tls", tls);
         }
 
