@@ -72,5 +72,29 @@
         <file>qss/blacksoft/radiobutton_checked_disable.png</file>
         <file>qss/blacksoft/radiobutton_unchecked.png</file>
         <file>qss/blacksoft/radiobutton_unchecked_disable.png</file>
+        <file>qss/grassgreen.css</file>
+        <file>qss/grassgreen/add_bottom.png</file>
+        <file>qss/grassgreen/add_left.png</file>
+        <file>qss/grassgreen/add_right.png</file>
+        <file>qss/grassgreen/add_top.png</file>
+        <file>qss/grassgreen/arrow_bottom.png</file>
+        <file>qss/grassgreen/arrow_left.png</file>
+        <file>qss/grassgreen/arrow_right.png</file>
+        <file>qss/grassgreen/arrow_top.png</file>
+        <file>qss/grassgreen/branch_close.png</file>
+        <file>qss/grassgreen/branch_open.png</file>
+        <file>qss/grassgreen/calendar_nextmonth.png</file>
+        <file>qss/grassgreen/calendar_prevmonth.png</file>
+        <file>qss/grassgreen/checkbox_checked.png</file>
+        <file>qss/grassgreen/checkbox_checked_disable.png</file>
+        <file>qss/grassgreen/checkbox_parcial.png</file>
+        <file>qss/grassgreen/checkbox_parcial_disable.png</file>
+        <file>qss/grassgreen/checkbox_unchecked.png</file>
+        <file>qss/grassgreen/checkbox_unchecked_disable.png</file>
+        <file>qss/grassgreen/menu_checked.png</file>
+        <file>qss/grassgreen/radiobutton_checked.png</file>
+        <file>qss/grassgreen/radiobutton_checked_disable.png</file>
+        <file>qss/grassgreen/radiobutton_unchecked.png</file>
+        <file>qss/grassgreen/radiobutton_unchecked_disable.png</file>
     </qresource>
 </RCC>

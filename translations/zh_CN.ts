@@ -259,6 +259,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
         <translation>开启后可能能缓解 TLS in TLS 特征。</translation>
     </message>
+    <message>
+        <source>grassgreen</source>
+        <translatorcomment>宝鼎茶闲烟尚绿，幽窗棋罢指犹凉。</translatorcomment>
+        <translation>宝鼎茶闲</translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -1082,10 +1087,6 @@ This needs to be run NekoBox with administrator privileges.</source>
     <message>
         <source>Peer Public Key</source>
         <translation>对端公钥</translation>
-    </message>
-    <message>
-        <source>MTU</source>
-        <translation></translation>
     </message>
     <message>
         <source>Reserved</source>

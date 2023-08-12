@@ -40,6 +40,10 @@ void ThemeManager::ApplyTheme(const QString &theme) {
                         path = ":/themes/feiyangqingyun/qss/blacksoft.css";
                         replace[":/qss/"] = ":/themes/feiyangqingyun/qss/";
                         break;
+                    case 4:
+                        path = ":/themes/feiyangqingyun/qss/grassgreen.css";
+                        replace[":/qss/"] = ":/themes/feiyangqingyun/qss/";
+                        break;
                     default:
                         return;
                 }
@@ -57,7 +61,7 @@ void ThemeManager::ApplyTheme(const QString &theme) {
                 qApp->setStyle(system_style);
                 qApp->setStyleSheet("");
             } else {
-                if (themeId == 1 || themeId == 2 || themeId == 3) {
+                if (1 <= themeId <= 4) {
                     // feiyangqingyun theme
                     QString paletteColor = qss.mid(20, 7);
                     qApp->setPalette(QPalette(paletteColor));
