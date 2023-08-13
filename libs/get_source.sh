@@ -11,7 +11,7 @@ if [ ! -d "sing-box-extra" ]; then
   git clone --no-checkout https://github.com/MatsuriDayo/sing-box-extra.git
 fi
 pushd sing-box-extra
-git pull https://github.com/MatsuriDayo/sing-box-extra.git
+git fetch https://github.com/MatsuriDayo/sing-box-extra.git
 git checkout "$COMMIT_SING_BOX_EXTRA"
 
 ENV_SING_BOX_EXTRA=1
@@ -25,7 +25,7 @@ if [ ! -d "Xray-core" ]; then
   git clone --no-checkout https://github.com/MatsuriDayo/Xray-core.git
 fi
 pushd Xray-core
-git pull https://github.com/MatsuriDayo/Xray-core.git
+git fetch https://github.com/MatsuriDayo/Xray-core.git
 git checkout "$COMMIT_MATSURI_XRAY"
 popd
 
