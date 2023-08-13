@@ -110,8 +110,8 @@ namespace NekoGui_sub {
             if (!ok) return;
         }
 
-        // Trojan
-        if (str.startsWith("trojan://")) {
+        // Trojan & Trojan-go
+        if (str.startsWith("trojan://") || str.startsWith("trojan-go://")) {
             ent = NekoGui::ProfileManager::NewProxyEntity("trojan");
             auto ok = ent->TrojanVLESSBean()->TryParseLink(str);
             if (!ok) return;
