@@ -3,7 +3,7 @@
 # Contributor: Nekoray_CI <noreply@chitang.dev>
 # Contributor: HystericalDragon <HystericalDragon@protonmail.com>
 pkgname='NekoXray-bin'
-pkgver=3.14
+pkgver=
 pkgrel=1
 pkgdesc='Qt based cross-platform GUI proxy configuration manager (backend: Xray / sing-box)'
 arch=('x86_64')
@@ -36,7 +36,9 @@ build() {
 
 package() {
     # .desktop file
-    install -Dm644 "${srcdir}/NekoXray.desktop" "${pkgdir}/usr/share/applications/NekoXray.desktop"
+    if [ -f "/usr/share/applications/NekoXray.desktop"]; then
+        install -Dm644 "${srcdir}/NekoXray.desktop" "${pkgdir}/usr/share/applications/NekoXray.desktop"
+    fi
 
     # app
     mkdir -p ${pkgdir}/opt

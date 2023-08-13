@@ -4,7 +4,7 @@ VERSION=$1
 
 cp ../libs/NekoXray.desktop nekoray/NekoXray.desktop
 cp ../libs/PKGBUILD nekoray/PKGBUILD
-sed "2s/.*/pkgver=${VERSION}/" nekoray/PKGBUILD > temp.txt && mv temp.txt nekoray/PKGBUILD
+sed "6s/.*/pkgver=${VERSION}/" nekoray/PKGBUILD > temp.txt && mv temp.txt nekoray/PKGBUILD
 
 pushd nekoray/
 unzip -o nekoray.zip && rm nekoray.zip
