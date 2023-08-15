@@ -164,6 +164,14 @@
         <translation>高级系统代理设置。请选择一种格式。</translation>
     </message>
     <message>
+        <source>Old Share Link Format</source>
+        <translation>旧分享链接格式</translation>
+    </message>
+    <message>
+        <source>Share VMess Link with v2rayN Format</source>
+        <translation>用 v2rayN 的格式分享 VMess 链接</translation>
+    </message>
+    <message>
         <source>Clear servers before updating subscription</source>
         <translation>更新订阅前清除服务器</translation>
     </message>
@@ -1406,10 +1414,6 @@ This needs to be run NekoBox with administrator privileges.</source>
         <translation>错误</translation>
     </message>
     <message>
-        <source>Default</source>
-        <translation type="vanished">默认</translation>
-    </message>
-    <message>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
@@ -1420,10 +1424,6 @@ This needs to be run NekoBox with administrator privileges.</source>
     <message>
         <source>Imported %1 profile(s)</source>
         <translation>导入了 %1 个配置</translation>
-    </message>
-    <message>
-        <source>Running: %1</source>
-        <translation type="vanished">正在运行: %1</translation>
     </message>
     <message>
         <source>None</source>

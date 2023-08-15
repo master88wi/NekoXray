@@ -84,10 +84,6 @@
         <translation>هم زمان</translation>
     </message>
     <message>
-        <source>Test URL</source>
-        <translation type="vanished">url تست</translation>
-    </message>
-    <message>
         <source>Use proxy when updating subscription</source>
         <translation>استفاده از پروکسی زمانی که اشتراک را بروزرسانی می کنید</translation>
     </message>
@@ -254,6 +250,14 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Interval (minute, invalid if less than 30)</source>
         <translation type="unfinished">فاصله (به دقیقا ، اگر کمتر از ۳۰ باشد نادرست است)</translation>
+    </message>
+    <message>
+        <source>Share VMess Link with v2rayN Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old Share Link Format</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
@@ -505,10 +509,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
 
 These settings can be changed later.</source>
         <translation type="unfinished">به نظر میرسد که شما برای اولین بار است که از این نرم افزار استفاده میکنید ، لطفا یک هسته را انتخاب کنید ، این تنظیمات میتواند بعدا تغییر یابد.</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="obsolete">خروج</translation>
     </message>
     <message>
         <source>Quit</source>
@@ -1401,10 +1401,6 @@ https://AntiNeko.github.io/n-configuration/#vpn-tun</source>
         <translation>پوشه Config باز شود</translation>
     </message>
     <message>
-        <source>Default</source>
-        <translation type="vanished">پیش فرض</translation>
-    </message>
-    <message>
         <source>Load routing and apply: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1518,10 +1514,6 @@ End: %2</source>
     <message>
         <source>Failed to stop Tun process</source>
         <translation>فرآیند Tun متوقف نشد</translation>
-    </message>
-    <message>
-        <source>Input</source>
-        <translation type="vanished">ورودی</translation>
     </message>
     <message>
         <source>[%1] test error: %2</source>
@@ -1718,10 +1710,6 @@ Direct: %2</source>
     <message>
         <source>Request with proxy but no profile started.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable System Proxy</source>
-        <translation type="obsolete">پروکسی سیستم را فعال کنید</translation>
     </message>
     <message>
         <source>Subscription request fininshed: %1</source>
