@@ -351,7 +351,7 @@ bool DialogEditProfile::onEnd() {
 
     // 左边
     ent->bean->name = ui->name->text();
-    ent->bean->serverAddress = ui->address->text();
+    ent->bean->serverAddress = ui->address->text().remove(' ');
     ent->bean->serverPort = ui->port->text().toInt();
 
     // 右边 stream
