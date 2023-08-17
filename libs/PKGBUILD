@@ -36,9 +36,7 @@ build() {
 
 package() {
     # .desktop file
-    if [ -f "/usr/share/applications/NekoXray.desktop"]; then
-        install -Dm644 "${srcdir}/NekoXray.desktop" "${pkgdir}/usr/share/applications/NekoXray.desktop"
-    fi
+    install -Dm644 "${srcdir}/NekoXray.desktop" "${pkgdir}/usr/share/applications/NekoXray.desktop"
 
     # app
     mkdir -p ${pkgdir}/opt
