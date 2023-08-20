@@ -102,7 +102,7 @@ int main(int argc, char* argv[]) {
     // dirs & clean
     auto wd = QDir(QApplication::applicationDirPath());
     if (NekoGui::dataStore->flag_use_appdata) {
-        QApplication::setApplicationName("nekoray");
+        QApplication::setApplicationName("NekoXray");
         if (!NekoGui::dataStore->appdataDir.isEmpty()) {
             wd.setPath(NekoGui::dataStore->appdataDir);
         } else {
