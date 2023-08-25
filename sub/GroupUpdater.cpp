@@ -414,7 +414,24 @@ namespace NekoGui_sub {
                     }
                 } else if (type_clash == "wireguard") {
                     auto bean = ent->WireGuardBean();
-                    bean->local_address = Node2QString(proxy["ip"], ",") + "," + Node2QString(proxy["ipv6"]);
+
+                    auto ipv4 = Node2QString(proxy["ip"]);
+                    auto ipv6 = Node2QString(proxy["ipv6"]);
+                    if (!ipv4.isEmpty() && !ipv4.contains('/')) {
+                        ipv4 += "/32";
+                    }
+                    if (!ipv6.isEmpty() && !ipv6.contains('/')) {
+                        ipv6 += "/128";
+                    }
+
+                    if (ipv6.isEmpty()) {
+                        bean->local_address = ipv4;
+                    } else if (ipv4.isEmpty()) {
+                        bean->local_address = ipv6;
+                    } else {
+                        bean->local_address = ipv4 + "," + ipv6;
+                    }
+
                     bean->private_key = Node2QString(proxy["private-key"]);
                     bean->peer_public_key = Node2QString(proxy["public-key"]);
                     // https://github.com/MetaCubeX/Clash.Meta/issues/671
