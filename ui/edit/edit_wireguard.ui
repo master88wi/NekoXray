@@ -95,7 +95,7 @@
       <locale language="English" country="UnitedStates"/>
      </property>
      <property name="minimum">
-      <number>576</number>
+      <number>1000</number>
      </property>
      <property name="maximum">
       <number>65535</number>

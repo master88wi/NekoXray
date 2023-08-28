@@ -45,7 +45,7 @@ DialogVPNSettings::~DialogVPNSettings() {
 void DialogVPNSettings::accept() {
     //
     auto mtu = ui->vpn_mtu->currentText().toInt();
-    if (mtu > 10000 || mtu < 1000) mtu = 9000;
+    if (mtu > 65535 || mtu <= 1000) mtu = 9000;
     NekoGui::dataStore->vpn_implementation = ui->vpn_implementation->currentIndex();
     NekoGui::dataStore->fake_dns = ui->fake_dns->isChecked();
     NekoGui::dataStore->vpn_mtu = mtu;

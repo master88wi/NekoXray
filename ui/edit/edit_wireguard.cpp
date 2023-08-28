@@ -23,6 +23,7 @@ void EditWireGuard::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
     ui->pre_shared_key->setText(bean->pre_shared_key);
     ui->reserved->setText(bean->reserved);
     ui->wireguard_mtu->setValue(bean->wireguard_mtu);
+    if (bean->wireguard_mtu <= 1000 || bean->wireguard_mtu > 65535) ui->wireguard_mtu->setValue(1408);
 }
 
 bool EditWireGuard::onEnd() {
