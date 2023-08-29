@@ -14,6 +14,19 @@ pushd sing-box-extra
 git fetch https://github.com/MatsuriDayo/sing-box-extra.git
 git checkout "$COMMIT_SING_BOX_EXTRA"
 
+pushd ..
+if [ -d "sing-box" ]; then
+  pushd sing-box
+  git fetch https://github.com/MatsuriDayo/sing-box.git
+  popd
+fi
+if [ -d "libneko" ]; then
+  pushd libneko
+  git fetch https://github.com/MatsuriDayo/libneko.git
+  popd
+fi
+popd
+
 ENV_SING_BOX_EXTRA=1
 source $SRC_ROOT/libs/get_source_env.sh
 NO_ENV=1 ./libs/get_source.sh
