@@ -53,7 +53,7 @@ CMake 参数等细节与 Linux 大同小异，有问题可以参照 Build_Linux 
 ```shell
 mkdir build
 cd build
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=D:/path/to/qt/5.15.2/msvc2019_64 ..
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION_MAJOR=5 -DCMAKE_PREFIX_PATH=D:/path/to/qt/5.15.2/msvc2019_64 ..
 ninja
 ```
 

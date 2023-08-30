@@ -31,7 +31,7 @@ ninja
 
 | CMake 参数          | 默认值               | 含义                    |
 |-------------------|-------------------|-----------------------|
-| QT_VERSION_MAJOR  | 5                 | QT版本                  |
+| QT_VERSION_MAJOR  | 6                 | QT版本                  |
 | NKR_NO_EXTERNAL   |                   | 不包含外部 C/C++ 依赖 (以下所有) |
 | NKR_NO_YAML       |                   | 不包含 yaml-cpp          |
 | NKR_NO_QHOTKEY    |                   | 不包含 qhotkey           |
