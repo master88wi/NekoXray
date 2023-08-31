@@ -34,6 +34,8 @@ Support Windows / Linux out of the box now.
 
 Build when pushing on the dev branch.
 
+在 [action](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml) 中下载。
+
 Download them in [actions](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml).
 
 警告：Nightly 版本不保证可用性。
