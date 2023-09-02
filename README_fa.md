@@ -41,6 +41,7 @@ https://matsuridayo.github.io
 * Trojan
 * NaïveProxy ( Custom Core )
 * Hysteria ( Custom Core or sing-box )
+* Hysteria2 ( Custom Core or sing-box )
 * Custom Outbound
 * Custom Core
 
