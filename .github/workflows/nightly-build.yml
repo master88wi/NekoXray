@@ -3,7 +3,7 @@ name: NekoXray Nightly Build
 on:
   push:
     branches:
-      - dev
+      - dev*
     paths:
         - "**/*.ui"
         - "**/*.cpp"

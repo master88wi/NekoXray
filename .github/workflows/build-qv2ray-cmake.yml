@@ -189,6 +189,16 @@ jobs:
           bash ../libs/package_debian.sh ${{ github.event.inputs.tag }}
           mv nekoray.deb $version_standalone-debian-x64.deb
           sudo rm -rf nekoray
+      - name: Pack Red Hat
+        if: github.event.inputs.publish != 'y'
+        run: |
+          sudo apt update
+          sudo apt install alien -y
+          source libs/env_deploy.sh
+          cd deployment
+          ####
+          sudo alien -r -c nekoray*.deb
+          sudo mv nekoray-*.rpm $version_standalone-redhat-x64.rpm
       - name: Pack Arch
         if: github.event.inputs.publish != 'y'
         run: |
