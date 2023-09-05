@@ -972,6 +972,14 @@ https://AntiNeko.github.io/n-configuration/#vpn-tun</source>
         <source>UDP Relay Mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished">نام کاربری</translation>
+    </message>
+    <message>
+        <source>Force use external core</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EditShadowSocks</name>

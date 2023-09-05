@@ -124,8 +124,8 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         LOAD_TYPE("vless")
         LOAD_TYPE("wireguard")
         LOAD_TYPE("naive")
-        LOAD_TYPE("hysteria")
-        LOAD_TYPE("hysteria2")
+        ui->type->addItem("Hysteria1", "hysteria");
+        ui->type->addItem("Hysteria2", "hysteria2");
         LOAD_TYPE("tuic")
         ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name), "internal");
         ui->type->addItem(tr("Custom (%1 config)").arg(software_core_name), "internal-full");
