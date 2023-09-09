@@ -241,7 +241,7 @@ namespace NekoGui_fmt {
             {"server_name", sni},
         };
         if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
-        if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
+        // if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
 
         QJsonObject outbound{
             {"server", serverAddress},
