@@ -69,6 +69,9 @@ namespace NekoGui_fmt {
         stream->reality_sid = GetQueryValue(query, "sid", "");
         stream->reality_spx = GetQueryValue(query, "spx", "");
         stream->utlsFingerprint = GetQueryValue(query, "fp", "");
+        if (stream->utlsFingerprint.isEmpty()) {
+            stream->utlsFingerprint = NekoGui::dataStore->utlsFingerprint;
+        }
 
         // type
         if (stream->network == "ws") {
@@ -187,6 +190,9 @@ namespace NekoGui_fmt {
             stream->reality_sid = GetQueryValue(query, "sid", "");
             stream->reality_spx = GetQueryValue(query, "spx", "");
             stream->utlsFingerprint = GetQueryValue(query, "fp", "");
+            if (stream->utlsFingerprint.isEmpty()) {
+                stream->utlsFingerprint = NekoGui::dataStore->utlsFingerprint;
+            }
 
             // type
             if (stream->network == "ws") {

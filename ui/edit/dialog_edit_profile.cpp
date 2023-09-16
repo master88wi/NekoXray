@@ -230,7 +230,11 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->sni->setText(stream->sni);
         ui->disable_sni->setChecked(stream->disable_sni);
         ui->alpn->setText(stream->alpn);
-        ui->utlsFingerprint->setCurrentText(stream->utlsFingerprint);
+        if (newEnt) {
+            ui->utlsFingerprint->setCurrentText(NekoGui::dataStore->utlsFingerprint);
+        } else {
+            ui->utlsFingerprint->setCurrentText(stream->utlsFingerprint);
+        }
         ui->insecure->setChecked(stream->allow_insecure);
         ui->header_type->setCurrentText(stream->header_type);
         ui->ws_early_data_name->setText(stream->ws_early_data_name);
