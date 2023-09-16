@@ -390,7 +390,6 @@ namespace NekoGui_sub {
                         bean->stream->ws_early_data_length = Node2Int(ws["max-early-data"]);
                         bean->stream->ws_early_data_name = Node2QString(ws["early-data-header-name"]);
                         // for Xray
-                        QString wsEarlyDataName = Node2QString(ws["early-data-header-name"]);
                         if (Node2QString(ws["early-data-header-name"]) == "Sec-WebSocket-Protocol") {
                             bean->stream->path += "?ed=" + Node2QString(ws["max-early-data"]);
                         }
