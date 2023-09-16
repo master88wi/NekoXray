@@ -305,10 +305,10 @@
                </property>
               </item>
               <item>
-                <property name="text">
-                 <string>grassgreen</string>
-                </property>
-              </item> 
+               <property name="text">
+                <string>grassgreen</string>
+               </property>
+              </item>
              </widget>
             </item>
             <item>
@@ -872,6 +872,13 @@
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="enabled_ech">
+         <property name="text">
+          <string>Enabled ECH</string>
+         </property>
         </widget>
        </item>
       </layout>

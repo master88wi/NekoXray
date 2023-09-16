@@ -259,6 +259,18 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Old Share Link Format</source>
         <translation>Поделиться ссылкой в старом формате</translation>
     </message>
+    <message>
+        <source>grassgreen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled ECH</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogEditGroup</name>
@@ -488,6 +500,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     <message>
         <source>Confirm</source>
         <translation>Подтвердить</translation>
+    </message>
+    <message>
+        <source>Disable SNI</source>
+        <translation type="unfinished">Отключить SNI</translation>
     </message>
 </context>
 <context>
@@ -782,22 +798,19 @@ This needs to be run NekoBox with administrator privileges.</source>
         <translation>Проксировать процессы</translation>
     </message>
     <message>
-        <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
-
-If still not working, see documentation for more information.
-https://matsuridayo.github.io/n-configuration/#vpn-tun</source>
-        <translation>Если у вас проблемы с запуском VPN, можно принудительно перезапустить процесс nekobox-core.
-
-Если ничего по-прежнему не работает, ознакомьтесь с документацией:
-https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation>Перезапустить</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>Отмена</translation>
+    </message>
+    <message>
+        <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
+
+If still not working, see documentation for more information.
+https://antineko.github.io/n-configuration/#vpn-tun</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1036,6 +1049,14 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
+    <message>
+        <source>Can be set in the feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation type="unfinished">Шифрование</translation>
+    </message>
 </context>
 <context>
     <name>EditVMess</name>
@@ -1054,6 +1075,29 @@ https://matsuridayo.github.io/n-configuration/#vpn-tun</translation>
     <message>
         <source>Generate UUID</source>
         <translation>Сгенерировать UUID</translation>
+    </message>
+</context>
+<context>
+    <name>EditWireGuard</name>
+    <message>
+        <source>Peer Public Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reserved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre Shared Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Address</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1579,6 +1623,15 @@ End: %2</source>
     </message>
     <message>
         <source>Stop Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set keep keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the following keywords to keep?
+Split by line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

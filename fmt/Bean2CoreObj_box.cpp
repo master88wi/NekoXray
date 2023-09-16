@@ -67,6 +67,13 @@ namespace NekoGui_fmt {
                     {"fingerprint", fp},
                 };
             }
+            if (NekoGui::dataStore->enabled_ech) {
+                tls["ech"] = QJsonObject{
+                    {"enabled", true},
+                    {"pq_signature_schemes_enabled", true},
+                    {"dynamic_record_sizing_disabled", true},
+                };
+            }
 
             // disable_sni
             if (disable_sni) {
@@ -240,6 +247,13 @@ namespace NekoGui_fmt {
             {"certificate", caText.trimmed()},
             {"server_name", sni},
         };
+        if (NekoGui::dataStore->enabled_ech) {
+            coreTlsObj["ech"] = QJsonObject{
+                {"enabled", true},
+                {"pq_signature_schemes_enabled", true},
+                {"dynamic_record_sizing_disabled", true},
+            };
+        }
         if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
         // if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
 

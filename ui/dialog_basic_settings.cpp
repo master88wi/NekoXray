@@ -68,6 +68,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
         ui->log_level->addItems({"debug", "info", "warning", "none"});
         ui->mux_protocol->hide();
         ui->mux_padding->hide();
+        ui->enabled_ech->hide();
     }
 
     refresh_auth();
@@ -254,6 +255,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     ui->utlsFingerprint->addItems(IS_NEKO_BOX ? Preset::SingBox::UtlsFingerPrint : Preset::Xray::UtlsFingerPrint);
 
     D_LOAD_BOOL(skip_cert)
+    D_LOAD_BOOL(enabled_ech)
     ui->enable_js_hook->setCurrentIndex(NekoGui::dataStore->enable_js_hook);
     ui->utlsFingerprint->setCurrentText(NekoGui::dataStore->utlsFingerprint);
 }
@@ -330,6 +332,7 @@ void DialogBasicSettings::accept() {
     // Security
 
     D_SAVE_BOOL(skip_cert)
+    D_SAVE_BOOL(enabled_ech)
     NekoGui::dataStore->enable_js_hook = ui->enable_js_hook->currentIndex();
     NekoGui::dataStore->utlsFingerprint = ui->utlsFingerprint->currentText();
 

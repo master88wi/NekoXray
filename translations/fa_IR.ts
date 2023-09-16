@@ -264,7 +264,11 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>padding</source>
+        <source>grassgreen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled ECH</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -495,6 +499,10 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Reality short id. Accept only one value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable SNI</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -797,7 +805,7 @@ This needs to be run NekoBox with administrator privileges.</source>
         <source>If you have trouble starting VPN, you can force reset nekobox_core process here.
 
 If still not working, see documentation for more information.
-https://AntiNeko.github.io/n-configuration/#vpn-tun</source>
+https://antineko.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1042,8 +1050,8 @@ https://AntiNeko.github.io/n-configuration/#vpn-tun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>encryption</source>
-        <translation type="unfinished"></translation>
+        <source>Encryption</source>
+        <translation type="unfinished">رمزگذاری</translation>
     </message>
 </context>
 <context>
@@ -1068,27 +1076,23 @@ https://AntiNeko.github.io/n-configuration/#vpn-tun</source>
 <context>
     <name>EditWireGuard</name>
     <message>
-        <source>peer public key</source>
+        <source>Peer Public Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>mtu</source>
+        <source>Reserved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>reserved</source>
+        <source>Pre Shared Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>pre shared key</source>
+        <source>Private Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>private key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>local address</source>
+        <source>Local Address</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1613,6 +1617,15 @@ End: %2</source>
     </message>
     <message>
         <source>Stop Testing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set keep keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set the following keywords to keep?
+Split by line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
