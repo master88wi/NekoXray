@@ -645,6 +645,7 @@ namespace NekoGui {
                     needMux = false;
                 }
             }
+            if (ent->type == "vless" && outbound["flow"] != "") needMux = false;
 
             // common
             if (IS_NEKO_BOX) {
