@@ -26,21 +26,17 @@ Support Windows / Linux out of the box now.
 
 ### Package
 
-暂无。
+#### AUR
 
-### Nightly Build
+null
 
-每次在 dev 分支推送时构建。
+#### archlinuxcn
 
-Build when pushing on the dev branch.
+null
 
-在 [action](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml) 中下载。
+#### Scoop extras
 
-Download them in [actions](https://github.com/AntiNeko/NekoXray/actions/workflows/nightly.yml).
-
-警告：Nightly 版本不保证可用性。
-
-WARNING: You may can't use nightly version
+null
 
 ## 更改记录 & 发布频道 / Changelog & Telegram channel
 
