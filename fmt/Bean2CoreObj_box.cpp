@@ -254,8 +254,12 @@ namespace NekoGui_fmt {
                 {"dynamic_record_sizing_disabled", true},
             };
         }
-        if (!alpn.trimmed().isEmpty()) coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
-        // if (proxy_type == proxy_Hysteria2) coreTlsObj["alpn"] = "h3";
+
+        if (proxy_type == proxy_Hysteria2 && alpn.trimmed().isEmpty()) {
+            coreTlsObj["alpn"] = "h3";
+        } else {
+            coreTlsObj["alpn"] = QList2QJsonArray(alpn.split(","));
+        }
 
         QJsonObject outbound{
             {"server", serverAddress},

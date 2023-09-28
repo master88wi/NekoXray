@@ -74,8 +74,6 @@ void EditQUIC::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
             ui->authPayload_l->hide();
             ui->authPayloadType->hide();
             ui->authPayloadType_l->hide();
-            ui->alpn->hide();
-            ui->alpn_l->hide();
             ui->TLS->removeItem(ui->alpn_sp);
             if (IS_NEKO_BOX) {
                 ui->disableMtuDiscovery->hide();
@@ -87,6 +85,9 @@ void EditQUIC::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
                 ui->connectionReceiveWindow_l->hide();
                 ui->streamReceiveWindow->hide();
                 ui->streamReceiveWindow_l->hide();
+            } else {
+                ui->alpn->hide();
+                ui->alpn_l->hide();
             }
         }
     } else if (bean->proxy_type == NekoGui_fmt::QUICBean::proxy_TUIC) {

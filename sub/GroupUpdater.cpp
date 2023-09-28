@@ -503,6 +503,7 @@ namespace NekoGui_sub {
                     bean->allowInsecure = Node2Bool(proxy["skip-cert-verify"]);
                     bean->caText = Node2QString(proxy["ca-str"]);
                     bean->sni = Node2QString(proxy["sni"]);
+                    bean->alpn = Node2QStringList(proxy["alpn"]).join(",");
 
                     bean->obfsPassword = Node2QString(proxy["obfs-password"]);
                     bean->password = Node2QString(proxy["password"]);
