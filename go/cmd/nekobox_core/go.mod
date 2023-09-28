@@ -107,3 +107,24 @@ replace github.com/sagernet/sing-box => ../../../../sing-box
 // replace github.com/sagernet/sing => ../../../../sing
 
 // replace github.com/sagernet/sing-dns => ../../../../sing-dns
+
+// replace github.com/sagernet/sing-shadowsocks => ../../../../sing-shadowsocks
+
+// replace github.com/sagernet/sing-shadowsocks2 => ../../../../sing-shadowsocks2
+
+// replace github.com/sagernet/sing-tun => ../../../../sing-tun
+
+// replace github.com/sagernet/sing-quic => ../../../../sing-quic
+
+// replace github.com/sagernet/sing-vmess => ../../../../sing-vmess
+
+// replace github.com/sagernet/sing-mux => ../../../../sing-mux
+
+// replace github.com/sagernet/sing-shadowtls => ../../../../sing-shadowtls
+
+// replace github.com/sagernet/wireguard-go => ../../../../wireguard-go
+
+// replace github.com/sagernet/gvisor => ../../../../gvisor
+
+// replace github.com/sagernet/hysteria => ../../../../hysteria
+
