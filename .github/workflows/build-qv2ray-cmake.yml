@@ -235,4 +235,4 @@ jobs:
       - name: Release
         if: github.event.inputs.publish != 'y'
         run: |
-          ./ghr -delete -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
+          ./ghr -delete -prerelease -t "${{ github.token }}" -n "${{ github.event.inputs.tag }}" "${{ github.event.inputs.tag }}" deployment
