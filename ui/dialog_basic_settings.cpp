@@ -62,14 +62,14 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     if (IS_NEKO_BOX) {
         ui->groupBox_http->hide();
         ui->inbound_socks_port_l->setText(ui->inbound_socks_port_l->text().replace("Socks", "Mixed (SOCKS+HTTP)"));
-        ui->log_level->addItems(QString("trace debug info warn error fatal panic").split(" "));
         ui->mux_protocol->addItems({"h2mux", "smux", "yamux"});
     } else {
-        ui->log_level->addItems({"debug", "info", "warning", "none"});
         ui->mux_protocol->hide();
         ui->mux_padding->hide();
         ui->enabled_ech->hide();
     }
+
+    ui->log_level->addItems(IS_NEKO_BOX ? Preset::SingBox::LogLevels : Preset::Xray::LogLevels);
 
     refresh_auth();
 

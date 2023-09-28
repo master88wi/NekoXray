@@ -93,7 +93,7 @@ namespace NekoGui {
         // Saved
 
         // Misc
-        QString log_level = "warning";
+        QString log_level = "error"; // The levels' name are different
         QString test_latency_url = "http://cp.cloudflare.com/";
         QString test_download_url = "http://cachefly.cachefly.net/10mb.test";
         int test_download_timeout = 30;
