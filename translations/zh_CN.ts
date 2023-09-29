@@ -748,6 +748,45 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
 </context>
 <context>
+    <name>DialogProtocolSettings</name>
+    <message>
+        <source>Protocol Settings</source>
+        <translation>协议设置</translation>
+    </message>
+    <message>
+        <source>Download (Mbps)</source>
+        <translation>下载速度 (Mbps)</translation>
+    </message>
+    <message>
+        <source>Upload (Mbps)</source>
+        <translation>上传速度 (Mbps)</translation>
+    </message>
+    <message>
+        <source>Apply Speed Settings for Hysteria2</source>
+        <translation>对 Hysteria2 使用速度设置</translation>
+    </message>
+    <message>
+        <source>Global Padding</source>
+        <translation>全局填充</translation>
+    </message>
+    <message>
+        <source>Authenticated Length</source>
+        <translation>认证长度块加密</translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation>加密方式</translation>
+    </message>
+    <message>
+        <source>Also for VLESS</source>
+        <translation>同时对 VLESS 生效</translation>
+    </message>
+    <message>
+        <source>Packet Encoding</source>
+        <translation>包编码</translation>
+    </message>
+</context>
+<context>
     <name>DialogVPNSettings</name>
     <message>
         <source>Tun Settings</source>
@@ -1639,6 +1678,10 @@ Split by line.</source>
     <message>
         <source>Stop Testing</source>
         <translation>停止测试</translation>
+    </message>
+    <message>
+        <source>Protocol Settings</source>
+        <translation>协议设置</translation>
     </message>
 </context>
 <context>

@@ -94,7 +94,11 @@ namespace NekoGui_fmt {
         }
 
         if (outbound->value("type").toString() == "vmess" || outbound->value("type").toString() == "vless") {
-            outbound->insert("packet_encoding", packet_encoding);
+            if (packet_encoding.isEmpty()) {
+                outbound->insert("packet_encoding", NekoGui::dataStore->protocol_vmess_packet_encoding);
+            } else {
+                outbound->insert("packet_encoding", packet_encoding);
+            }
         }
     }
 
@@ -149,15 +153,20 @@ namespace NekoGui_fmt {
     CoreObjOutboundBuildResult VMessBean::BuildCoreObjSingBox() {
         CoreObjOutboundBuildResult result;
 
+        auto sec = security;
+        if (sec == "auto") {
+            sec = NekoGui::dataStore->protocol_vmess_security;
+        }
+
         QJsonObject outbound{
             {"type", "vmess"},
             {"server", serverAddress},
             {"server_port", serverPort},
             {"uuid", uuid.trimmed()},
             {"alter_id", aid},
-            {"global_padding", true},
-            {"authenticated_length", true},
-            {"security", security},
+            {"global_padding", NekoGui::dataStore->protocol_vmess_global_padding},
+            {"authenticated_length", NekoGui::dataStore->protocol_vmess_authenticated_length},
+            {"security", sec},
         };
 
         stream->BuildStreamSettingsSingBox(&outbound);
@@ -267,14 +276,25 @@ namespace NekoGui_fmt {
             {"tls", coreTlsObj},
         };
 
+        auto up = uploadMbps;
+        auto down = downloadMbps;
+        if (proxy_type == proxy_Hysteria || (proxy_type == proxy_Hysteria2 && NekoGui::dataStore->protocol_quic_hy2_speed)) {
+            if (NekoGui::dataStore->protocol_quic_up > 0) {
+                up = NekoGui::dataStore->protocol_quic_up;
+            }
+            if (NekoGui::dataStore->protocol_quic_down > 0) {
+                down = NekoGui::dataStore->protocol_quic_down;
+            }
+        }
+
         if (proxy_type == proxy_Hysteria) {
             outbound["type"] = "hysteria";
             outbound["obfs"] = obfsPassword;
             outbound["disable_mtu_discovery"] = disableMtuDiscovery;
             outbound["recv_window"] = streamReceiveWindow;
             outbound["recv_window_conn"] = connectionReceiveWindow;
-            outbound["up_mbps"] = uploadMbps;
-            outbound["down_mbps"] = downloadMbps;
+            outbound["up_mbps"] = up;
+            outbound["down_mbps"] = down;
 
             if (!hopPort.trimmed().isEmpty()) outbound["hop_ports"] = hopPort;
             if (authPayloadType == hysteria_auth_base64) outbound["auth"] = authPayload;
@@ -282,8 +302,8 @@ namespace NekoGui_fmt {
         } else if (proxy_type == proxy_Hysteria2) {
             outbound["type"] = "hysteria2";
             outbound["password"] = password;
-            outbound["up_mbps"] = uploadMbps;
-            outbound["down_mbps"] = downloadMbps;
+            outbound["up_mbps"] = up;
+            outbound["down_mbps"] = down;
             if (!obfsPassword.isEmpty()) {
                 outbound["obfs"] = QJsonObject{
                     {"type", "salamander"},

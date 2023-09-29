@@ -177,6 +177,15 @@ namespace NekoGui {
         // Other Core
         ExtraCore *extraCore = new ExtraCore;
 
+        // Protocol Settings (some default settings)
+        int protocol_quic_up = 0;
+        int protocol_quic_down = 0;
+        bool protocol_quic_hy2_speed = false;
+        QString protocol_vmess_security = "auto";
+        QString protocol_vmess_packet_encoding = "";
+        bool protocol_vmess_global_padding = true;
+        bool protocol_vmess_authenticated_length = true;
+
         // Methods
 
         DataStore();

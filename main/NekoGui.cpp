@@ -291,6 +291,14 @@ namespace NekoGui {
         _add(new configItem("core_ray_direct_dns", &core_ray_direct_dns, itemType::boolean));
         _add(new configItem("core_ray_freedom_domainStrategy", &core_ray_freedom_domainStrategy, itemType::string));
         _add(new configItem("vpn_internal_tun", &vpn_internal_tun, itemType::boolean));
+
+        _add(new configItem("protocol_quic_up", &protocol_quic_up, itemType::integer));
+        _add(new configItem("protocol_quic_down", &protocol_quic_down, itemType::integer));
+        _add(new configItem("protocol_quic_hy2_speed", &protocol_quic_hy2_speed, itemType::boolean));
+        _add(new configItem("protocol_vmess_security", &protocol_vmess_security, itemType::string));
+        _add(new configItem("protocol_vmess_packet_encoding", &protocol_vmess_packet_encoding, itemType::string));
+        _add(new configItem("protocol_vmess_global_padding", &protocol_vmess_global_padding, itemType::boolean));
+        _add(new configItem("protocol_vmess_authenticated_length", &protocol_vmess_authenticated_length, itemType::boolean));
 #ifdef Q_OS_WIN
         _add(new configItem("core_ray_windows_disable_auto_interface", &core_ray_windows_disable_auto_interface, itemType::boolean));
 #endif

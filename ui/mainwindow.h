@@ -89,6 +89,8 @@ private slots:
 
     void on_menu_vpn_settings_triggered();
 
+    void on_menu_protocol_settings_triggered();
+
     void on_menu_hotkey_settings_triggered();
 
     void on_menu_add_from_input_triggered();

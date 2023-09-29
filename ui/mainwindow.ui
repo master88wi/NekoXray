@@ -513,6 +513,7 @@
     <addaction name="menu_vpn_settings"/>
     <addaction name="menu_hotkey_settings"/>
     <addaction name="menu_open_config_folder"/>
+    <addaction name="menu_protocol_settings"/>
    </widget>
    <widget class="QMenu" name="menu_server">
     <property name="title">
@@ -901,6 +902,11 @@
   <action name="menu_stop_testing">
    <property name="text">
     <string>Stop Testing</string>
+   </property>
+  </action>
+  <action name="menu_protocol_settings">
+   <property name="text">
+    <string>Protocol Settings</string>
    </property>
   </action>
  </widget>

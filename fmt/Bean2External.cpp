@@ -201,8 +201,18 @@ namespace NekoGui_fmt {
             config["auth"] = password;
 
             QJsonObject bandwidth;
-            if (uploadMbps > 0) bandwidth["up"] = Int2String(uploadMbps) + " mbps";
-            if (downloadMbps > 0) bandwidth["down"] = Int2String(downloadMbps) + " mbps";
+            auto up = uploadMbps;
+            auto down = downloadMbps;
+            if (NekoGui::dataStore->protocol_quic_hy2_speed) {
+                if (NekoGui::dataStore->protocol_quic_up > 0) {
+                    up = NekoGui::dataStore->protocol_quic_up;
+                }
+                if (NekoGui::dataStore->protocol_quic_down > 0) {
+                    down = NekoGui::dataStore->protocol_quic_down;
+                }
+            }
+            if (up > 0) bandwidth["up"] = Int2String(up) + " mbps";
+            if (down > 0) bandwidth["down"] = Int2String(down) + " mbps";
             config["bandwidth"] = bandwidth;
 
             QJsonObject quic;
@@ -272,8 +282,17 @@ namespace NekoGui_fmt {
             config["fast_open"] = true;
             config["lazy_start"] = true;
             config["obfs"] = obfsPassword;
-            config["up_mbps"] = uploadMbps;
-            config["down_mbps"] = downloadMbps;
+
+            auto up = uploadMbps;
+            if (NekoGui::dataStore->protocol_quic_up > 0) {
+                up = NekoGui::dataStore->protocol_quic_up;
+            }
+            auto down = downloadMbps;
+            if (NekoGui::dataStore->protocol_quic_down > 0) {
+                down = NekoGui::dataStore->protocol_quic_down;
+            }
+            config["up_mbps"] = up;
+            config["down_mbps"] = down;
 
             if (authPayloadType == hysteria_auth_base64) config["auth"] = authPayload;
             if (authPayloadType == hysteria_auth_string) config["auth_str"] = authPayload;

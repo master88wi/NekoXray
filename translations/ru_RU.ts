@@ -746,6 +746,45 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     </message>
 </context>
 <context>
+    <name>DialogProtocolSettings</name>
+    <message>
+        <source>Protocol Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download (Mbps)</source>
+        <translation type="unfinished">Скорость приема (Mbps)</translation>
+    </message>
+    <message>
+        <source>Upload (Mbps)</source>
+        <translation type="unfinished">Скорость отдачи (Mbps)</translation>
+    </message>
+    <message>
+        <source>Apply Speed Settings for Hysteria2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global Padding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authenticated Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also for VLESS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packet Encoding</source>
+        <translation type="unfinished">Кодирование пакетов</translation>
+    </message>
+</context>
+<context>
     <name>DialogVPNSettings</name>
     <message>
         <source>Tun Settings</source>
@@ -1632,6 +1671,10 @@ End: %2</source>
     <message>
         <source>Set the following keywords to keep?
 Split by line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Protocol Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
