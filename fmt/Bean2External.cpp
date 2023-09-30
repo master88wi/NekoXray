@@ -1,5 +1,6 @@
 #include "db/ProxyEntity.hpp"
 #include "fmt/includes.h"
+#include "fmt/Preset.hpp"
 
 #include <QFile>
 #include <QDir>
@@ -109,7 +110,10 @@ namespace NekoGui_fmt {
         proxy_url.setPort(connect_port);
         proxy_url.setHost(domain_address);
 
-        if (!disable_log) result.arguments += "--log";
+        int log_level_index = IS_NEKO_BOX ? Preset::SingBox::LogLevels.indexOf(NekoGui::dataStore->log_level) : Preset::Xray::LogLevels.indexOf(NekoGui::dataStore->log_level);
+        if (log_level_index < 2 && !disable_log) {
+            result.arguments += "--log";
+        }
         result.arguments += "--listen=socks://127.0.0.1:" + Int2String(socks_port);
         result.arguments += "--proxy=" + proxy_url.toString(QUrl::FullyEncoded);
         if (domain_address != connect_address)
