@@ -204,14 +204,6 @@
         <translation>密码</translation>
     </message>
     <message>
-        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation>默认跳过 TLS 证书验证 (allowInsecure)</translation>
-    </message>
-    <message>
-        <source>Default uTLS Fingerprint</source>
-        <translation>默认 uTLS 指纹</translation>
-    </message>
-    <message>
         <source>Core Options</source>
         <translation>核心选项</translation>
     </message>
@@ -267,10 +259,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>grassgreen</source>
         <translatorcomment>宝鼎茶闲烟尚绿，幽窗棋罢指犹凉。</translatorcomment>
         <translation>宝鼎茶闲</translation>
-    </message>
-    <message>
-        <source>Enabled ECH</source>
-        <translation>启用 ECH</translation>
     </message>
 </context>
 <context>
@@ -784,6 +772,18 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Packet Encoding</source>
         <translation>包编码</translation>
+    </message>
+    <message>
+        <source>Enabled ECH</source>
+        <translation>启用 ECH</translation>
+    </message>
+    <message>
+        <source>Default uTLS Fingerprint</source>
+        <translation>默认 uTLS 指纹</translation>
+    </message>
+    <message>
+        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
+        <translation>默认跳过 TLS 证书验证 (allowInsecure)</translation>
     </message>
 </context>
 <context>

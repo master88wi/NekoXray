@@ -1,7 +1,7 @@
 #include "dialog_protocol_settings.h"
 #include "ui_dialog_protocol_settings.h"
 
-// #include "fmt/Preset.hpp"
+#include "fmt/Preset.hpp"
 
 #include "main/GuiUtils.hpp"
 #include "main/NekoGui.hpp"
@@ -15,11 +15,18 @@ DialogProtocolSettings::DialogProtocolSettings(QWidget* parent)
     auto ds = dataStore;
 
     if (!IS_NEKO_BOX) {
+        ui->enabled_ech->hide();
         ui->global_padding->hide();
         ui->authenticated_length->hide();
         ui->packet_encoding_l->hide();
         ui->packet_encoding->hide();
     }
+
+    // TLS
+    ui->utlsFingerprint->addItems(IS_NEKO_BOX ? Preset::SingBox::UtlsFingerPrint : Preset::Xray::UtlsFingerPrint);
+    ui->utlsFingerprint->setCurrentText(NekoGui::dataStore->utlsFingerprint);
+    D_LOAD_BOOL(skip_cert)
+    D_LOAD_BOOL(enabled_ech)
 
     // QUIC
     ui->up->setText(Int2String(ds->protocol_quic_up));
@@ -40,6 +47,11 @@ DialogProtocolSettings::~DialogProtocolSettings() {
 void DialogProtocolSettings::accept() {
     using namespace NekoGui;
     auto ds = dataStore;
+
+    // TLS
+    D_SAVE_BOOL(skip_cert)
+    D_SAVE_BOOL(enabled_ech)
+    NekoGui::dataStore->utlsFingerprint = ui->utlsFingerprint->currentText();
 
     // QUIC
     ds->protocol_quic_up = ui->up->text().toInt();

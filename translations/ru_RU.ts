@@ -164,16 +164,8 @@
         <translation>Безопасность</translation>
     </message>
     <message>
-        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation>Не проверять подлинность TLS сертификатов по умолчанию</translation>
-    </message>
-    <message>
         <source>Enable hook.js</source>
         <translation>Использовать hook.js</translation>
-    </message>
-    <message>
-        <source>Default uTLS Fingerprint</source>
-        <translation>uTLS fingerprint по умолчанию</translation>
     </message>
     <message>
         <source>Advanced system proxy settings. Please select a format.</source>
@@ -265,10 +257,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>Enabling it may potentially reduce the TLS in TLS overhead.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enabled ECH</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -782,6 +770,18 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Packet Encoding</source>
         <translation type="unfinished">Кодирование пакетов</translation>
+    </message>
+    <message>
+        <source>Enabled ECH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default uTLS Fingerprint</source>
+        <translation type="unfinished">uTLS fingerprint по умолчанию</translation>
+    </message>
+    <message>
+        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
+        <translation type="unfinished">Не проверять подлинность TLS сертификатов по умолчанию</translation>
     </message>
 </context>
 <context>

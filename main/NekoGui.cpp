@@ -255,7 +255,6 @@ namespace NekoGui {
         _add(new configItem("remember_enable", &remember_enable, itemType::boolean));
         _add(new configItem("language", &language, itemType::integer));
         _add(new configItem("spmode2", &remember_spmode, itemType::stringList));
-        _add(new configItem("skip_cert", &skip_cert, itemType::boolean));
         _add(new configItem("hk_mw", &hotkey_mainwindow, itemType::string));
         _add(new configItem("hk_group", &hotkey_group, itemType::string));
         _add(new configItem("hk_route", &hotkey_route, itemType::string));
@@ -283,7 +282,6 @@ namespace NekoGui {
         _add(new configItem("start_minimal", &start_minimal, itemType::boolean));
         _add(new configItem("max_log_line", &max_log_line, itemType::integer));
         _add(new configItem("splitter_state", &splitter_state, itemType::string));
-        _add(new configItem("utlsFingerprint", &utlsFingerprint, itemType::string));
         _add(new configItem("core_box_clash_api", &core_box_clash_api, itemType::integer));
         _add(new configItem("core_box_clash_api_secret", &core_box_clash_api_secret, itemType::string));
         _add(new configItem("core_box_clash_api_ui", &core_box_clash_api_ui, itemType::string));
@@ -292,6 +290,9 @@ namespace NekoGui {
         _add(new configItem("core_ray_freedom_domainStrategy", &core_ray_freedom_domainStrategy, itemType::string));
         _add(new configItem("vpn_internal_tun", &vpn_internal_tun, itemType::boolean));
 
+        _add(new configItem("utlsFingerprint", &utlsFingerprint, itemType::string));
+        _add(new configItem("skip_cert", &skip_cert, itemType::boolean));
+        _add(new configItem("enabled_ech", &enabled_ech, itemType::boolean));
         _add(new configItem("protocol_quic_up", &protocol_quic_up, itemType::integer));
         _add(new configItem("protocol_quic_down", &protocol_quic_down, itemType::integer));
         _add(new configItem("protocol_quic_hy2_speed", &protocol_quic_hy2_speed, itemType::boolean));

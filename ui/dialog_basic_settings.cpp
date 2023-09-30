@@ -66,7 +66,6 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
     } else {
         ui->mux_protocol->hide();
         ui->mux_padding->hide();
-        ui->enabled_ech->hide();
     }
 
     ui->log_level->addItems(IS_NEKO_BOX ? Preset::SingBox::LogLevels : Preset::Xray::LogLevels);
@@ -252,12 +251,7 @@ DialogBasicSettings::DialogBasicSettings(QWidget *parent)
 
     // Security
 
-    ui->utlsFingerprint->addItems(IS_NEKO_BOX ? Preset::SingBox::UtlsFingerPrint : Preset::Xray::UtlsFingerPrint);
-
-    D_LOAD_BOOL(skip_cert)
-    D_LOAD_BOOL(enabled_ech)
     ui->enable_js_hook->setCurrentIndex(NekoGui::dataStore->enable_js_hook);
-    ui->utlsFingerprint->setCurrentText(NekoGui::dataStore->utlsFingerprint);
 }
 
 DialogBasicSettings::~DialogBasicSettings() {
@@ -331,10 +325,7 @@ void DialogBasicSettings::accept() {
 
     // Security
 
-    D_SAVE_BOOL(skip_cert)
-    D_SAVE_BOOL(enabled_ech)
     NekoGui::dataStore->enable_js_hook = ui->enable_js_hook->currentIndex();
-    NekoGui::dataStore->utlsFingerprint = ui->utlsFingerprint->currentText();
 
     // 关闭连接统计，停止刷新前清空记录。
     if (NekoGui::dataStore->traffic_loop_interval == 0 || NekoGui::dataStore->connection_statistics == false) {

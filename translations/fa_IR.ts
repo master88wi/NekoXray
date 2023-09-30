@@ -198,14 +198,6 @@
         <translation>رمز عبور</translation>
     </message>
     <message>
-        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
-        <translation>رد شدن از احراز هویت گواهی TLS به طور پیش فرض (allowInsecure)</translation>
-    </message>
-    <message>
-        <source>Default uTLS Fingerprint</source>
-        <translation type="unfinished">اثرانگشت پیشفرض uTLS</translation>
-    </message>
-    <message>
         <source>Core Options</source>
         <translation type="unfinished">تنظیمات هسته</translation>
     </message>
@@ -265,10 +257,6 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
     </message>
     <message>
         <source>grassgreen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enabled ECH</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -779,6 +767,18 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Packet Encoding</source>
         <translation type="unfinished">رمزنگاری بسته ها</translation>
+    </message>
+    <message>
+        <source>Enabled ECH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default uTLS Fingerprint</source>
+        <translation type="unfinished">اثرانگشت پیشفرض uTLS</translation>
+    </message>
+    <message>
+        <source>Skip TLS certificate authentication by default (allowInsecure)</source>
+        <translation type="unfinished">رد شدن از احراز هویت گواهی TLS به طور پیش فرض (allowInsecure)</translation>
     </message>
 </context>
 <context>
