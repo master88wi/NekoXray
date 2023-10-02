@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>802</height>
+    <height>844</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -527,19 +527,6 @@ security (QUIC)</string>
          <item>
           <layout class="QGridLayout" name="_3">
            <item row="1" column="0">
-            <widget class="QLabel" name="label_8">
-             <property name="toolTip">
-              <string>Application layer protocol negotiation, clear text. Please separate them with commas.</string>
-             </property>
-             <property name="text">
-              <string notr="true">ALPN</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="MyLineEdit" name="sni"/>
-           </item>
-           <item row="0" column="0">
             <widget class="QLabel" name="label_5">
              <property name="toolTip">
               <string>Server name indication, clear text.</string>
@@ -549,15 +536,60 @@ security (QUIC)</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="2">
+           <item row="1" column="2">
             <widget class="QCheckBox" name="disable_sni">
              <property name="text">
               <string>Disable SNI</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="1" colspan="2">
+           <item row="1" column="1">
+            <widget class="MyLineEdit" name="sni"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="toolTip">
+              <string>Application layer protocol negotiation, clear text. Please separate them with commas.</string>
+             </property>
+             <property name="text">
+              <string notr="true">ALPN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" colspan="2">
             <widget class="MyLineEdit" name="alpn"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="ech_box">
+           <item>
+            <widget class="QCheckBox" name="enabled_ech">
+             <property name="text">
+              <string>Enabled ECH</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignRight">
+            <widget class="QLabel" name="ech_l">
+             <property name="text">
+              <string>ECH Configuration</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="ech_edit">
+             <property name="text">
+              <string>Edit</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -664,7 +696,6 @@ security (QUIC)</string>
   <tabstop>insecure</tabstop>
   <tabstop>certificate_edit</tabstop>
   <tabstop>sni</tabstop>
-  <tabstop>alpn</tabstop>
   <tabstop>utlsFingerprint</tabstop>
   <tabstop>reality_pbk</tabstop>
   <tabstop>reality_sid</tabstop>

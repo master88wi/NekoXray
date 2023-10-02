@@ -67,13 +67,6 @@ namespace NekoGui_fmt {
                     {"fingerprint", fp},
                 };
             }
-            if (NekoGui::dataStore->enabled_ech) {
-                tls["ech"] = QJsonObject{
-                    {"enabled", true},
-                    {"pq_signature_schemes_enabled", true},
-                    {"dynamic_record_sizing_disabled", true},
-                };
-            }
 
             // disable_sni
             if (disable_sni) {
@@ -88,6 +81,15 @@ namespace NekoGui_fmt {
                 } else {
                     tls["server_name"] = "";
                 }
+            } else if (enabled_ech) {
+                // ECH
+                auto ech_array = QList2QJsonArray(ech_config.split("\n"));
+                tls["ech"] = QJsonObject{
+                    {"enabled", true},
+                    {"pq_signature_schemes_enabled", (ech_array.size() > 5)},
+                    {"dynamic_record_sizing_disabled", true},
+                    {"config", ech_array},
+                };
             }
 
             outbound->insert("tls", tls);
@@ -256,13 +258,16 @@ namespace NekoGui_fmt {
             {"certificate", caText.trimmed()},
             {"server_name", sni},
         };
-        if (NekoGui::dataStore->enabled_ech) {
-            coreTlsObj["ech"] = QJsonObject{
-                {"enabled", true},
-                {"pq_signature_schemes_enabled", true},
-                {"dynamic_record_sizing_disabled", true},
-            };
-        }
+
+        // if (enabled_ech) {
+        //     auto ech_array = QList2QJsonArray(ech_config.split("\n"));
+        //     coreTlsObj["ech"] = QJsonObject {
+        //         {"enabled", true},
+        //             {"pq_signature_schemes_enabled", (ech_array.size() > 5)},
+        //             {"dynamic_record_sizing_disabled", true},
+        //             {"config", ech_array},
+        //     }
+        // }
 
         if (proxy_type == proxy_Hysteria2 && alpn.trimmed().isEmpty()) {
             coreTlsObj["alpn"] = "h3";

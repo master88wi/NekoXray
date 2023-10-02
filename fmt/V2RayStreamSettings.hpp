@@ -20,6 +20,9 @@ namespace NekoGui_fmt {
         QString certificate = "";
         QString utlsFingerprint = "";
         bool allow_insecure = false;
+        // TLS ECH
+        bool enabled_ech = false;
+        QString ech_config = "";
         // ws early data
         QString ws_early_data_name = "";
         int ws_early_data_length = 0;
@@ -49,6 +52,9 @@ namespace NekoGui_fmt {
             _add(new configItem("sid", &reality_sid, itemType::string));
             _add(new configItem("spx", &reality_spx, itemType::string));
             _add(new configItem("mux_s", &multiplex_status, itemType::integer));
+
+            _add(new configItem("enabled_ech", &enabled_ech, itemType::boolean));
+            _add(new configItem("ech_config", &ech_config, itemType::string));
         }
 
         QJsonObject BuildStreamSettingsV2Ray();

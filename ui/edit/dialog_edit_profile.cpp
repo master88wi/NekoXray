@@ -100,6 +100,9 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
                 ui->reality_spx_l->hide();
             } else {
                 ui->disable_sni->hide();
+                ui->enabled_ech->hide();
+                ui->ech_l->hide();
+                ui->ech_edit->hide();
             }
         } else {
             ui->security_box->setVisible(false);
@@ -243,6 +246,9 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         ui->reality_sid->setText(stream->reality_sid);
         ui->multiplex->setCurrentIndex(stream->multiplex_status);
         CACHE.certificate = stream->certificate;
+
+        ui->enabled_ech->setChecked(stream->enabled_ech);
+        CACHE.ech_config = stream->ech_config;
     } else {
         ui->right_all_w->setVisible(false);
     }
@@ -379,6 +385,9 @@ bool DialogEditProfile::onEnd() {
         stream->reality_sid = ui->reality_sid->text();
         stream->multiplex_status = ui->multiplex->currentIndex();
         stream->certificate = CACHE.certificate;
+
+        stream->enabled_ech = ui->enabled_ech->isChecked();
+        stream->ech_config = CACHE.ech_config;
     }
 
     // cached custom
@@ -419,6 +428,11 @@ void DialogEditProfile::editor_cache_updated_impl() {
     } else {
         ui->certificate_edit->setText(tr("Already set"));
     }
+    if (CACHE.ech_config.isEmpty()) {
+        ui->ech_edit->setText(tr("Not set"));
+    } else {
+        ui->ech_edit->setText(tr("Already set"));
+    }
     if (CACHE.custom_outbound.isEmpty()) {
         ui->custom_outbound_edit->setText(tr("Not set"));
     } else {
@@ -455,6 +469,15 @@ void DialogEditProfile::on_certificate_edit_clicked() {
     auto txt = QInputDialog::getMultiLineText(this, tr("Certificate"), "", CACHE.certificate, &ok);
     if (ok) {
         CACHE.certificate = txt;
+        editor_cache_updated_impl();
+    }
+}
+
+void DialogEditProfile::on_ech_edit_clicked() {
+    bool ok;
+    auto txt = QInputDialog::getMultiLineText(this, tr("ECH Configuration"), "", CACHE.ech_config, &ok);
+    if (ok) {
+        CACHE.ech_config = txt;
         editor_cache_updated_impl();
     }
 }
@@ -536,6 +559,10 @@ void DialogEditProfile::do_apply_to_group(const std::shared_ptr<NekoGui::Group> 
         copyStream(&stream->allow_insecure);
     } else if (key == ui->certificate_edit) {
         copyStream(&stream->certificate);
+    } else if (key == ui->enabled_ech) {
+        copyStream(&stream->enabled_ech);
+    } else if (key == ui->ech_edit) {
+        copyStream(&stream->ech_config);
     } else if (key == ui->custom_config_edit) {
         copyBean(&ent->bean->custom_config);
     } else if (key == ui->custom_outbound_edit) {

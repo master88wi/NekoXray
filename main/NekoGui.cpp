@@ -292,7 +292,6 @@ namespace NekoGui {
 
         _add(new configItem("utlsFingerprint", &utlsFingerprint, itemType::string));
         _add(new configItem("skip_cert", &skip_cert, itemType::boolean));
-        _add(new configItem("enabled_ech", &enabled_ech, itemType::boolean));
         _add(new configItem("protocol_quic_up", &protocol_quic_up, itemType::integer));
         _add(new configItem("protocol_quic_down", &protocol_quic_down, itemType::integer));
         _add(new configItem("protocol_quic_hy2_speed", &protocol_quic_hy2_speed, itemType::boolean));

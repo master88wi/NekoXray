@@ -494,6 +494,14 @@ For NekoBox, this rewrites the underlying(localhost) DNS in Tun Mode, normal mod
         <source>Disable SNI</source>
         <translation>不发送服务器名称指示</translation>
     </message>
+    <message>
+        <source>Enabled ECH</source>
+        <translation>启用 ECH</translation>
+    </message>
+    <message>
+        <source>ECH Configuration</source>
+        <translation>ECH 设置</translation>
+    </message>
 </context>
 <context>
     <name>DialogFirstSetup</name>
@@ -772,10 +780,6 @@ For more information, see the document &quot;Configuration/DNS&quot;.</source>
     <message>
         <source>Packet Encoding</source>
         <translation>包编码</translation>
-    </message>
-    <message>
-        <source>Enabled ECH</source>
-        <translation>启用 ECH</translation>
     </message>
     <message>
         <source>Default uTLS Fingerprint</source>
