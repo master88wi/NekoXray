@@ -1,6 +1,5 @@
-# Maintainer: xchacha20-ietf-poly1305 <139959885+xchacha20-ietf-poly1305@users.noreply.github.com>
+# Maintainer: xchacha20-poly1305 <139959885+xchacha20-poly1305@users.noreply.github.com>
 # Contributor: Chi_Tang <me@chitang.dev>
-# Contributor: Nekoray_CI <noreply@chitang.dev>
 # Contributor: HystericalDragon <HystericalDragon@protonmail.com>
 pkgname='NekoXray-bin'
 pkgver=
