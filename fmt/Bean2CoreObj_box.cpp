@@ -259,15 +259,15 @@ namespace NekoGui_fmt {
             {"server_name", sni},
         };
 
-        // if (enabled_ech) {
-        //     auto ech_array = QList2QJsonArray(ech_config.split("\n"));
-        //     coreTlsObj["ech"] = QJsonObject {
-        //         {"enabled", true},
-        //             {"pq_signature_schemes_enabled", (ech_array.size() > 5)},
-        //             {"dynamic_record_sizing_disabled", true},
-        //             {"config", ech_array},
-        //     }
-        // }
+        if (enabled_ech) {
+            auto ech_array = QList2QJsonArray(ech_config.split("\n"));
+            coreTlsObj["ech"] = QJsonObject{
+                {"enabled", true},
+                {"pq_signature_schemes_enabled", (ech_array.size() > 5)},
+                {"dynamic_record_sizing_disabled", true},
+                {"config", ech_array},
+            };
+        }
 
         if (proxy_type == proxy_Hysteria2 && alpn.trimmed().isEmpty()) {
             coreTlsObj["alpn"] = "h3";

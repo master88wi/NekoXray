@@ -31,9 +31,12 @@ private:
 
     struct {
         QString caText;
+        QString ech_config;
     } CACHE;
 
 private slots:
 
     void on_certificate_clicked();
+
+    void on_ech_config_clicked();
 };

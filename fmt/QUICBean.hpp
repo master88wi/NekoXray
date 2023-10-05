@@ -60,6 +60,10 @@ namespace NekoGui_fmt {
         QString caText = "";
         bool disableSni = false;
 
+        // ECH
+        bool enabled_ech = false;
+        QString ech_config = "";
+
         explicit QUICBean(int _proxy_type) : AbstractBean(0) {
             proxy_type = _proxy_type;
             if (proxy_type == proxy_Hysteria || proxy_type == proxy_Hysteria2) {
@@ -96,6 +100,9 @@ namespace NekoGui_fmt {
             _add(new configItem("alpn", &alpn, itemType::string));
             _add(new configItem("caText", &caText, itemType::string));
             _add(new configItem("disableSni", &disableSni, itemType::boolean));
+            // ECH
+            _add(new configItem("enabled_ech", &enabled_ech, itemType::boolean));
+            _add(new configItem("ech_config", &ech_config, itemType::string));
         };
 
         QString DisplayAddress() override {

@@ -47,6 +47,9 @@ void EditQUIC::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
     P_C_LOAD_STRING(caText);
     P_LOAD_BOOL(allowInsecure);
     P_LOAD_BOOL(disableSni);
+    // ECH
+    P_LOAD_BOOL(enabled_ech);
+    P_C_LOAD_STRING(ech_config);
 
     if (bean->proxy_type == NekoGui_fmt::QUICBean::proxy_Hysteria || bean->proxy_type == NekoGui_fmt::QUICBean::proxy_Hysteria2) {
         ui->uuid->hide();
@@ -116,6 +119,11 @@ void EditQUIC::onStart(std::shared_ptr<NekoGui::ProxyEntity> _ent) {
             ui->uos->hide();
         }
     }
+
+    if (!IS_NEKO_BOX) {
+        ui->enabled_ech->hide();
+        ui->ech_config->hide();
+    }
 }
 
 bool EditQUIC::onEnd() {
@@ -151,12 +159,17 @@ bool EditQUIC::onEnd() {
     P_SAVE_BOOL(allowInsecure);
     P_C_SAVE_STRING(caText);
     P_SAVE_BOOL(disableSni);
+    // ECH
+    P_SAVE_BOOL(enabled_ech);
+    P_C_SAVE_STRING(ech_config);
+
     return true;
 }
 
 QList<QPair<QPushButton *, QString>> EditQUIC::get_editor_cached() {
     return {
         {ui->certificate, CACHE.caText},
+        {ui->ech_config, CACHE.ech_config},
     };
 }
 
@@ -165,6 +178,15 @@ void EditQUIC::on_certificate_clicked() {
     auto txt = QInputDialog::getMultiLineText(this, tr("Certificate"), "", CACHE.caText, &ok);
     if (ok) {
         CACHE.caText = txt;
+        editor_cache_updated();
+    }
+}
+
+void EditQUIC::on_ech_config_clicked() {
+    bool ok;
+    auto txt = QInputDialog::getMultiLineText(this, tr("ECH Configuration"), "", CACHE.ech_config, &ok);
+    if (ok) {
+        CACHE.ech_config = txt;
         editor_cache_updated();
     }
 }
