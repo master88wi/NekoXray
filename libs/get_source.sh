@@ -8,10 +8,10 @@ pushd ..
 
 ####
 if [ ! -d "sing-box-extra" ]; then
-  git clone --no-checkout https://github.com/MatsuriDayo/sing-box-extra.git
+  git clone --no-checkout https://github.com/AntiNeko/sing-box-extra.git
 fi
 pushd sing-box-extra
-git fetch https://github.com/MatsuriDayo/sing-box-extra.git
+git fetch https://github.com/AntiNeko/sing-box-extra.git
 git checkout "$COMMIT_SING_BOX_EXTRA"
 
 pushd ..
